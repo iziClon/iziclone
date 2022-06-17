@@ -66,7 +66,7 @@ export class Product extends CommonFields implements IProduct {
     @JoinColumn({ name: 'categoryId' })
         category: Category;
 
-    @ManyToOne(() => User, (user) => user.products)
-    @JoinColumn({ name: 'userId' })
-        user: User;
+    // @ManyToOne(() => User, (user) => user.products)
+    // @JoinColumn({ name: 'userId' })
+    //     user: User;
 }
