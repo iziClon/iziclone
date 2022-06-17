@@ -4,6 +4,7 @@ import {
 
 import { CommonFields } from './commonFields';
 import { Category } from './category';
+import { User } from './user';
 
 export interface IProduct {
     id:number;
@@ -66,7 +67,7 @@ export class Product extends CommonFields implements IProduct {
     @JoinColumn({ name: 'categoryId' })
         category: Category;
 
-    // @ManyToOne(() => User, (user) => user.products)
-    // @JoinColumn({ name: 'userId' })
-    //     user: User;
+    @ManyToOne(() => User, (user) => user.products)
+    @JoinColumn({ name: 'userId' })
+        user: User;
 }
