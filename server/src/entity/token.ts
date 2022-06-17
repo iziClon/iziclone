@@ -1,5 +1,6 @@
 import {
-    Column, Entity, OneToOne, JoinColumn, PrimaryGeneratedColumn, CreateDateColumn, DeleteDateColumn,
+    Column, Entity, OneToOne, JoinColumn, PrimaryGeneratedColumn,
+    CreateDateColumn, DeleteDateColumn,
 } from 'typeorm';
 import { IToken } from '../interfaces';
 
@@ -7,28 +8,27 @@ import { User } from './user';
 
 @Entity('tokens', { database: 'uwETQSYns8' })
 export class Token implements IToken {
-
     @PrimaryGeneratedColumn()
-    id:number;
+        id:number;
 
     @Column({
         type: 'varchar',
         width: 250,
         nullable: false,
     })
-    accessToken: string;
+        accessToken: string;
 
     @Column({
         type: 'varchar',
         width: 250,
         nullable: false,
     })
-    refreshToken: string;
+        refreshToken: string;
 
     @Column({
         type: 'int',
     })
-    userId: number;
+        userId: number;
 
     @Column({
         nullable: false,
@@ -36,14 +36,13 @@ export class Token implements IToken {
     })
 
     @CreateDateColumn({ type: 'timestamp' })
-    createdAt: string;
+        createdAt: string;
 
     @Column()
     @DeleteDateColumn({ type: 'timestamp' })
-    deletedAt?: string;
+        deletedAt?: string;
 
     @OneToOne(() => User)
     @JoinColumn({ name: 'userId' })
-    user:User;
+        user:User;
 }
-

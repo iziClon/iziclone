@@ -1,4 +1,4 @@
-    export interface IUser {
+export interface IUser {
     id: number;
     name: string;
     age: number;
@@ -7,6 +7,5 @@
     password: string;
     createdAt: string;
     deletedAt?: string;
-    //products: IProduct[];
+    // products: IProduct[];
 }
-

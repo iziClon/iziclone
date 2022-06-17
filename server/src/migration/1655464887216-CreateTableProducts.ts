@@ -10,7 +10,7 @@ export class CreateTableProducts1655464887216 implements MigrationInterface {
                 title VARCHAR(255) NOT NULL,
                 description VARCHAR(255),
                 price INT NOT NULL,
-                year INT CHECK (year <= new Date().getFullYear()),
+                year INT CHECK (year <= 2022),
                 status BOOLEAN NOT NULL,
                 FOREIGN KEY (categoryId) REFERENCES Categories (id) ON DELETE CASCADE,
                 FOREIGN KEY (userId) REFERENCES Users (id) ON DELETE CASCADE,
