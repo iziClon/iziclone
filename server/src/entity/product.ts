@@ -1,7 +1,9 @@
-import {Column, Entity, JoinColumn, ManyToOne} from 'typeorm';
+import {
+    Column, Entity, JoinColumn, ManyToOne,
+} from 'typeorm';
 
-import {CommonFields} from "./commonFields";
-import {Category} from "./category";
+import { CommonFields } from './commonFields';
+import { Category } from './category';
 
 export interface IProduct {
     id:number;
@@ -20,52 +22,51 @@ export class Product extends CommonFields implements IProduct {
         type: 'int',
         nullable: false,
     })
-    categoryId: number;
+        categoryId: number;
 
     @Column({
         type: 'int',
         nullable: false,
     })
-    userId: number;
+        userId: number;
 
     @Column({
         type: 'varchar',
         width: 255,
         nullable: false,
     })
-    title: string;
+        title: string;
 
     @Column({
         type: 'varchar',
         width: 255,
         nullable: false,
     })
-    description: string;
+        description: string;
 
     @Column({
         type: 'int',
         nullable: false,
     })
-    price: number;
+        price: number;
 
     @Column({
         type: 'int',
     })
-    year?: number;
+        year?: number;
 
     @Column({
         type: 'boolean',
         nullable: false,
 
     })
-    status: boolean;
+        status: boolean;
 
     @ManyToOne(() => Category, (category) => category.products)
     @JoinColumn({ name: 'categoryId' })
-    category: Category;
+        category: Category;
 
     @ManyToOne(() => User, (user) => user.products)
     @JoinColumn({ name: 'userId' })
-    user: User;
-
+        user: User;
 }
