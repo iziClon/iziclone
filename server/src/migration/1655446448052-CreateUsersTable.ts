@@ -1,15 +1,15 @@
-import { MigrationInterface, QueryRunner } from 'typeorm';
+import {MigrationInterface, QueryRunner} from "typeorm";
 
-export class CreateTableUsers1645472767107 implements MigrationInterface {
+export class CreateUsersTable1655446448052 implements MigrationInterface {
+
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(`
             CREATE TABLE IF NOT EXISTS Users (
                 id INT PRIMARY KEY AUTO_INCREMENT,
-                firstName VARCHAR(250) NOT NULL,
-                lastName VARCHAR(250) NOT NULL,
-                age INT CHECK (age > 0),
-                phone VARCHAR(250) NOT NULL UNIQUE,
-                email VARCHAR(250) NOT NULL UNIQUE,
+                name VARCHAR(250) NOT NULL,
+                age INT CHECK (age >= 18) NOT NULL,
+                phone VARCHAR(250) UNIQUE NOT NULL,
+                email VARCHAR(250) UNIQUE NOT NULL,
                 password VARCHAR(250) NOT NULL,
                 createdAt TIMESTAMP DEFAULT(UTC_TIMESTAMP()) NOT NULL,
                 deletedAt TIMESTAMP
