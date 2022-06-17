@@ -6,7 +6,7 @@ import { IToken } from '../interfaces';
 
 import { User } from './user';
 
-@Entity('tokens', { database: 'uwETQSYns8' })
+@Entity('Tokens', { database: 'uwETQSYns8' })
 export class Token implements IToken {
     @PrimaryGeneratedColumn()
         id:number;
@@ -27,6 +27,7 @@ export class Token implements IToken {
 
     @Column({
         type: 'int',
+        nullable: false,
     })
         userId: number;
 
