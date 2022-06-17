@@ -13,7 +13,7 @@ export class User implements IUser {
 
     @Column({
         type: 'varchar',
-        width: 255,
+        width: 250,
         nullable: false,
     })
     name: string;
@@ -25,7 +25,7 @@ export class User implements IUser {
 
     @Column({
         type: 'varchar',
-        width: 255,
+        width: 250,
         nullable: false,
         unique: true,
     })
@@ -33,7 +33,7 @@ export class User implements IUser {
 
     @Column({
         type: 'varchar',
-        width: 255,
+        width: 250,
         nullable: false,
         unique: true,
     })
@@ -41,7 +41,7 @@ export class User implements IUser {
 
     @Column({
         type: 'varchar',
-        width: 255,
+        width: 250,
         nullable: false,
     })
     password: string;

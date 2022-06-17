@@ -7,9 +7,9 @@ export class CreateUsersTable1655446448052 implements MigrationInterface {
             CREATE TABLE IF NOT EXISTS Users (
                 id INT PRIMARY KEY AUTO_INCREMENT,
                 name VARCHAR(250) NOT NULL,
-                age INT CHECK (age >= 18) NOT NULL,
-                phone VARCHAR(250) UNIQUE NOT NULL,
-                email VARCHAR(250) UNIQUE NOT NULL,
+                age INT CHECK (age >= 18),
+                phone VARCHAR(250) NOT NULL UNIQUE,
+                email VARCHAR(250) NOT NULL UNIQUE,
                 password VARCHAR(250) NOT NULL,
                 createdAt TIMESTAMP DEFAULT(UTC_TIMESTAMP()) NOT NULL,
                 deletedAt TIMESTAMP
