@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-import { Router } from './router';
+import { Layout } from './components';
+import { HomePage } from './pages';
 
-const App = () => (
-  <Router />
+const App: FC = () => (
+  <Routes>
+
+    <Route path="/" element={<Layout />}>
+      <Route index element={<HomePage />} />
+
+    </Route>
+
+  </Routes>
 );
 
 export default App;

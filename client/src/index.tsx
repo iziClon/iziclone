@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 import './common-styles/index.css';
 import './common-styles/normalize.css';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
 const root = ReactDOM.createRoot(
@@ -10,6 +11,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>,
 );
