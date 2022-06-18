@@ -61,6 +61,10 @@
                 ]
             }
         ],
+       "react/jsx-curly-brace-presence": [
+            "error",
+            { "props": "never", "children": "never" }
+        ],
         "camelcase": "error",
         "spaced-comment": "error",
         "quotes": [
