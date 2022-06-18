@@ -41,7 +41,7 @@ const Header: FC = () => (
         <Link to="#">
           <div className={css.addAdvertisementWrapper}>
             <div><FontAwesomeIcon icon={faPlus} className={css.addAdvertisementIcon} /></div>
-            <div>Подати оголошення</div>
+            <div className={css.addAdvertisementText}>Подати оголошення</div>
           </div>
         </Link>
       </div>

@@ -58,13 +58,13 @@
 }
 
 .categoriesListText {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
 }
 
 .search {
     display: flex;
-    width: 45%;
+    width: 50%;
     margin: 0 10px;
     background-color: var(--white);
     border-radius: 10px;
@@ -118,6 +118,7 @@ input {
 
 .addAdvertisementWrapper{
     width: 100%;
+    margin-left: 20%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -128,9 +129,17 @@ input {
     color: var(--main-blue-color);
 }
 
+.addAdvertisementWrapper:hover{
+    background-color: var(--hover-yellow);
+}
+
 .addAdvertisementIcon{
     width: 20px;
     height: 20px;
+}
+
+.addAdvertisementText{
+    font-size: 12px;
 }
 
 .login a {
@@ -141,7 +150,13 @@ input {
     text-decoration: underline;
 }
 
-@media screen and( max-width: 992px) {
+@media(max-width: 1100px) {
+.addAdvertisementWrapper{
+    margin-left: 0;
+}
+}
+
+@media(max-width: 992px) {
 
     .logo {
         font-size: 18px;
@@ -154,6 +169,9 @@ input {
     .categoriesListIcon {
         height: 14px;
         width: 14px;
+    }
+    .categoriesListText, .addAdvertisementIcon{
+        font-size: 10px;
     }
 
     .formWrapper {
@@ -178,34 +196,81 @@ input {
         width: 14px;
         height: 14px;
     }
+
+    .login{
+        font-size: 12px;
+    }
 }
 
-@media screen and( max-width: 768px) {
+@media(max-width: 768px) {
+    .wrapper{
+        padding: 0 15px;
+    }
+
+    .nav{
+        justify-content: space-between;
+    }
 
     .logo {
         font-size: 14px;
     }
 
-    .categoriesListIcon {
-        height: 10px;
-        width: 10px;
-    }
-
-    .categoriesListText{
+    .categoriesListText, .addAdvertisementText{
         display: none;
     }
 
+    .categoriesListIcon, .addAdvertisementIcon{
+        height: 18px;
+        width: 18px;
+    }
+    .nav{
+        justify-content: space-around;
+    }
+
+    .userMenu{
+        justify-content: space-around;
+    }
+
+    .formWrapper{
+       flex-direction: row-reverse;
+    }
+
     .formBtnIcon {
-        width: 10px;
-        height: 10px;
+        width: 14px;
+        height: 14px;
+        color: var(--grey);
+        margin-right: 15px;
     }
 
     .addAdvertisementWrapper{
         padding: 4px 8px;
     }
 
+    .addAdvertisementText{
+        font-size: 10px;
+    }
+
     .addAdvertisementIcon{
         width: 10px;
         height: 10px;
+    }
+
+    .login{
+        font-size: 10px;
+    }
+}
+
+@media(max-width: 420px) {
+    .wrapper{
+        justify-content: space-between;
+    }
+    .logo{
+        display: none;
+    }
+   input[placeholder]{
+       display: none;
+   }
+    .userMenu{
+        margin: 0;
     }
 }
