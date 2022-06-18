@@ -1,0 +1,211 @@
+.wrapper {
+    max-width: 1200px;
+    min-height: 70px;
+    margin: 0 auto;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--main-blue-color);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    width: 30%;
+}
+
+.logo {
+    color: var(--white);
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+.menu {
+    margin: 0 10%;
+}
+
+.menu:hover {
+    border-radius: 10px;
+    background-color: var(--dark-blue);
+}
+
+.categoriesListIcon {
+    color: var(--white);
+}
+
+.categoriesListBtn {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 8px;
+}
+
+.categoriesListWrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.categoriesListIcon {
+    height: 20px;
+    width: 20px;
+    font-weight: 500;
+}
+
+.categoriesListIcon, .categoriesListText {
+    color: var(--white);
+}
+
+.categoriesListText {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.search {
+    display: flex;
+    width: 45%;
+    margin: 0 10px;
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+.form {
+    width: 100%;
+}
+
+.formWrapper {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+input {
+    width: 100%;
+}
+
+.formInput {
+    color: var(--grey);
+    width: 100%;
+}
+
+.formBtn {
+    padding: 8px;
+    background: none;
+}
+
+.formBtnIcon {
+    color: var(--black);
+    width: 20px;
+    height: 20px;
+    font-weight: 600;
+}
+
+.formBtn:hover{
+    background-color: var(--hover-white);
+    border-radius: 7px;
+}
+
+
+.userMenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 30%;
+    margin-left: 15px ;
+}
+
+.addAdvertisementWrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 7px;
+    background-color: var(--yellow);
+    border-radius: 25px;
+    padding: 8px 18px;
+    color: var(--main-blue-color);
+}
+
+.addAdvertisementIcon{
+    width: 20px;
+    height: 20px;
+}
+
+.login a {
+    color: var(--white);
+}
+
+.login a:hover {
+    text-decoration: underline;
+}
+
+@media screen and( max-width: 992px) {
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .categoriesListBtn {
+        padding: 4px;
+    }
+
+    .categoriesListIcon {
+        height: 14px;
+        width: 14px;
+    }
+
+    .formWrapper {
+        padding: 5px;
+    }
+
+    .formBtn {
+        padding: 4px;
+    }
+
+    .formBtnIcon {
+        width: 14px;
+        height: 14px;
+        font-weight: 400;
+    }
+
+    .addAdvertisementWrapper{
+        padding: 4px 12px;
+    }
+
+    .addAdvertisementIcon{
+        width: 14px;
+        height: 14px;
+    }
+}
+
+@media screen and( max-width: 768px) {
+
+    .logo {
+        font-size: 14px;
+    }
+
+    .categoriesListIcon {
+        height: 10px;
+        width: 10px;
+    }
+
+    .categoriesListText{
+        display: none;
+    }
+
+    .formBtnIcon {
+        width: 10px;
+        height: 10px;
+    }
+
+    .addAdvertisementWrapper{
+        padding: 4px 8px;
+    }
+
+    .addAdvertisementIcon{
+        width: 10px;
+        height: 10px;
+    }
+}
