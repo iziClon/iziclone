@@ -1,15 +1,14 @@
 import {
-    Column, CreateDateColumn, DeleteDateColumn, Entity,/* OneToMany,*/ PrimaryGeneratedColumn,
+    Column, CreateDateColumn, DeleteDateColumn, Entity, OneToMany, PrimaryGeneratedColumn,
 } from 'typeorm';
 
-import {IUser} from "../interfaces";
-
+import { IUser } from '../interfaces';
+import { Product } from './product';
 
 @Entity('users', { database: 'uwETQSYns8' })
 export class User implements IUser {
-
     @PrimaryGeneratedColumn()
-    id:number;
+    id: number;
 
     @Column({
         type: 'varchar',
@@ -58,7 +57,6 @@ export class User implements IUser {
     @DeleteDateColumn({ type: 'timestamp' })
     deletedAt?: string;
 
-   /*@OneToMany(() => Product, (product) => product.user)
-    products: Product[];*/
-
+    @OneToMany(() => Product, (product) => product.user)
+    products: Product[];
 }
