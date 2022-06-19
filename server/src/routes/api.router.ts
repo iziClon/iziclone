@@ -1,6 +1,6 @@
-import {Router} from 'express';
+import { Router } from 'express';
 
-import {commonRouter} from './common.router';
+import { commonRouter } from './common.router';
 
 const router = Router();
 

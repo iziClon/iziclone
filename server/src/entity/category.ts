@@ -1,10 +1,10 @@
 import { Column, Entity, OneToMany } from 'typeorm';
 
 import { CommonFields } from './commonFields';
-import {Product} from './product';
-import {ICategory} from '../interfaces';
+import { Product } from './product';
+import { ICategory } from '../interfaces';
 
-@Entity('Categories', {database: 'uwETQSYns8'})
+@Entity('Categories', { database: 'uwETQSYns8' })
 export class Category extends CommonFields implements ICategory {
     title: string;
 

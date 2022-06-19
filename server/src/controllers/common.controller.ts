@@ -1,8 +1,8 @@
-import {Request, Response} from 'express';
+import { Request, Response } from 'express';
 
-import {ICategory} from '../interfaces';
+import { ICategory } from '../interfaces';
 
-import {commonService} from '../services';
+import { commonService } from '../services';
 
 class CommonController {
     public async getCategories(req: Request, res: Response): Promise<Response<ICategory[]>> {

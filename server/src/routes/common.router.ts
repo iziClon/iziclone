@@ -1,6 +1,6 @@
-import {Router} from 'express';
+import { Router } from 'express';
 
-import {commonController} from '../controllers';
+import { commonController } from '../controllers';
 
 const router = Router();
 

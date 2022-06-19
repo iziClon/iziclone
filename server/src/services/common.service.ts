@@ -1,11 +1,12 @@
-import {getManager} from 'typeorm';
+import { getManager } from 'typeorm';
 
-import {Category} from '../entity';
-import {ICategory} from '../interfaces';
+import { Category } from '../entity';
+import { ICategory } from '../interfaces';
 
 class CommonService {
     public async getCategories(): Promise<ICategory[]> {
-        return getManager().getRepository(Category)
+        return getManager()
+            .getRepository(Category)
             .createQueryBuilder('category')
             .getMany();
     }
