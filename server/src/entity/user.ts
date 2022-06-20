@@ -10,7 +10,7 @@ export class User implements IUser {
     @PrimaryGeneratedColumn()
 
         id: number;
-  
+
     @Column({
         type: 'varchar',
         width: 250,
@@ -57,7 +57,6 @@ export class User implements IUser {
     @Column()
     @DeleteDateColumn({ type: 'timestamp' })
         deletedAt?: string;
-
 
     @OneToMany(() => Product, (product) => product.user)
         products: Product[];
