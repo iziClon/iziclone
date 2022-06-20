@@ -1,5 +1,8 @@
+import {IProduct} from "../entity";
+
 export interface ICategory {
     id: number;
-    title: string;
+    nameCategories: string;
     icon: string;
+    products: IProduct[]
 }
