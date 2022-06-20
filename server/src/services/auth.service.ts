@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt';
 
 import { IUser } from '../interfaces';
 import { User } from '../entity';
-import { tokenService } from './tokenService';
+import { tokenService } from './token.service';
 
 class AuthService {
     async registration(user:IUser):Promise<IUser> {
