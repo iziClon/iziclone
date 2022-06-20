@@ -5,7 +5,7 @@ import {
 import { CommonFields } from './commonFields';
 import { Category } from './category';
 import { User } from './user';
-import {IProduct} from "../interfaces/product.interface";
+import { IProduct } from '../interfaces/product.interface';
 
 // export interface IProduct {
 //     id:number;

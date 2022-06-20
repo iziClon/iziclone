@@ -1,8 +1,8 @@
-import {IProduct} from "../entity";
+import { IProduct } from './product.interface';
 
 export interface ICategory {
     id: number;
-    nameCategories: string;
+    nameCategory: string;
     icon: string;
     products: IProduct[]
 }

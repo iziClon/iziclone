@@ -9,7 +9,7 @@ import { User } from './user';
 @Entity('tokens', { database: 'uwETQSYns8' })
 export class Token implements IToken {
     @PrimaryGeneratedColumn()
-    id: number;
+        id: number;
 
     @Column({
         type: 'varchar',
@@ -44,5 +44,5 @@ export class Token implements IToken {
 
     @OneToOne(() => User)
     @JoinColumn({ name: 'userId' })
-    user: User;
+        user: User;
 }
