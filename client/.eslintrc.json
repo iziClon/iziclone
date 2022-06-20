@@ -46,7 +46,8 @@
                 "js": "never",
                 "jsx": "never",
                 "ts": "never",
-                "tsx": "never"
+                "tsx": "never",
+                "linebreak-style": ["error", "windows"]
             }
         ],
         "react/react-in-jsx-scope": "off",
