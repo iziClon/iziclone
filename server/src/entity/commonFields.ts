@@ -2,11 +2,7 @@ import {
     Column, CreateDateColumn, DeleteDateColumn, PrimaryGeneratedColumn,
 } from 'typeorm';
 
-export interface ICommonFields {
-    id: number;
-    createdAt: string;
-    deletedAt?: string;
-}
+import { ICommonFields } from '../interfaces/commonField.interface';
 
 export class CommonFields implements ICommonFields {
     @PrimaryGeneratedColumn()
@@ -17,7 +13,7 @@ export class CommonFields implements ICommonFields {
         default: Date.now(),
     })
     @CreateDateColumn({ type: 'timestamp' })
-    createdAt: string;
+        createdAt: string;
 
     @Column()
     @DeleteDateColumn({ type: 'timestamp' })
