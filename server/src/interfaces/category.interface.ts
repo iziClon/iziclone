@@ -1,5 +1,8 @@
+import { IProduct } from './product.interface';
+
 export interface ICategory {
     id: number;
-    title: string;
+    nameCategory: string;
     icon: string;
+    products: IProduct[]
 }
