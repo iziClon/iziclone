@@ -4,5 +4,6 @@ export interface ICategory {
     id: number;
     nameCategory: string;
     icon: string;
+
     products: IProduct[]
 }
