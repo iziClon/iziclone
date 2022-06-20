@@ -8,8 +8,9 @@ import { Product } from './product';
 @Entity('users', { database: 'uwETQSYns8' })
 export class User implements IUser {
     @PrimaryGeneratedColumn()
-        id:number;
 
+        id: number;
+  
     @Column({
         type: 'varchar',
         width: 250,
@@ -57,6 +58,7 @@ export class User implements IUser {
     @DeleteDateColumn({ type: 'timestamp' })
         deletedAt?: string;
 
-    @OneToMany(() => Product, (products) => products.user)
+
+    @OneToMany(() => Product, (product) => product.user)
         products: Product[];
 }
