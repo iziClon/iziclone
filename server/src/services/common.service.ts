@@ -2,6 +2,7 @@ import { getManager } from 'typeorm';
 
 import { Category } from '../entity';
 import { ICategory } from '../interfaces';
+import {commonRepository} from "../repositories/common/commonRepository";
 
 class CommonService {
     public async getCategories(): Promise<ICategory[]> {
@@ -9,6 +10,11 @@ class CommonService {
             .getRepository(Category)
             .createQueryBuilder('category')
             .getMany();
+    }
+
+    public async createCategory(category: ICategory): Promise<ICategory> {
+      console.log(category,'category')
+        return commonRepository.createCategory(category)
     }
 }
 
