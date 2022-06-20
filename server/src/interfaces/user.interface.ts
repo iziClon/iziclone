@@ -1,3 +1,5 @@
+import { IProduct } from './product.interface';
+
 export interface IUser {
     id: number;
     name: string;
@@ -7,5 +9,5 @@ export interface IUser {
     password: string;
     createdAt: string;
     deletedAt?: string;
-    // products: IProduct[];
+    products?: IProduct[];
 }
