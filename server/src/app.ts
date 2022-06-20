@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(apiRouter);
 
 app.listen(5200, async () => {
-    console.log(`Server has started on Port: 5200`);
+    console.log('Server has started on Port: 5200');
     try {
         const connection = await createConnection();
         if (connection) {
