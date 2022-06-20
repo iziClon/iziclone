@@ -5,7 +5,7 @@ import {
 import { IUser } from '../interfaces';
 import { Product } from './product';
 
-@Entity('users', { database: 'uwETQSYns8' })
+@Entity('Users', { database: 'uwETQSYns8' })
 export class User implements IUser {
     @PrimaryGeneratedColumn()
 

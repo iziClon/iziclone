@@ -21,7 +21,6 @@ class TokenService {
 
         if (tokenFromDB) {
             tokenFromDB.refreshToken = refreshToken;
-            tokenFromDB.accessToken = accessToken;
             await getManager().getRepository(Token).save(tokenFromDB);
         }
 

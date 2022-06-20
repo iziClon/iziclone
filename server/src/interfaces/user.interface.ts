@@ -1,4 +1,4 @@
-import { IProduct } from '../entity';
+import { IProduct } from './product.interface';
 
 export interface IUser {
     id: number;
