@@ -1,9 +1,9 @@
 import express from 'express';
 import 'reflect-metadata';
+
 import { createConnection } from 'typeorm';
 
 import { apiRouter } from './routes';
-import { config } from "./configs";
 
 const app = express();
 
@@ -12,8 +12,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(apiRouter);
 
-app.listen(config.PORT, async () => {
-    console.log(`Server has started on Port: ${config.PORT}`);
+app.listen(5200, async () => {
+    console.log(`Server has started on Port: 5200`);
     try {
         const connection = await createConnection();
         if (connection) {
