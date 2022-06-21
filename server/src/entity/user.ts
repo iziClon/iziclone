@@ -1,27 +1,27 @@
 import {
-    Column, CreateDateColumn, DeleteDateColumn, Entity,/* OneToMany,*/ PrimaryGeneratedColumn,
+    Column, CreateDateColumn, DeleteDateColumn, Entity, OneToMany, PrimaryGeneratedColumn,
 } from 'typeorm';
 
-import {IUser} from "../interfaces";
+import { IUser } from '../interfaces';
+import { Product } from './product';
 
-
-@Entity('users', { database: 'uwETQSYns8' })
+@Entity('Users', { database: 'uwETQSYns8' })
 export class User implements IUser {
-
     @PrimaryGeneratedColumn()
-    id:number;
+
+        id: number;
 
     @Column({
         type: 'varchar',
         width: 250,
         nullable: false,
     })
-    name: string;
+        name: string;
 
     @Column({
         type: 'int',
     })
-    age: number;
+        age: number;
 
     @Column({
         type: 'varchar',
@@ -29,7 +29,7 @@ export class User implements IUser {
         nullable: false,
         unique: true,
     })
-    phone: string;
+        phone: string;
 
     @Column({
         type: 'varchar',
@@ -37,14 +37,14 @@ export class User implements IUser {
         nullable: false,
         unique: true,
     })
-    email: string;
+        email: string;
 
     @Column({
         type: 'varchar',
         width: 250,
         nullable: false,
     })
-    password: string;
+        password: string;
 
     @Column({
         nullable: false,
@@ -52,13 +52,12 @@ export class User implements IUser {
     })
 
     @CreateDateColumn({ type: 'timestamp' })
-    createdAt: string;
+        createdAt: string;
 
     @Column()
     @DeleteDateColumn({ type: 'timestamp' })
-    deletedAt?: string;
+        deletedAt?: string;
 
-   /*@OneToMany(() => Product, (product) => product.user)
-    products: Product[];*/
-
+    @OneToMany(() => Product, (product) => product.user)
+        products: Product[];
 }

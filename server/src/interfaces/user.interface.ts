@@ -1,4 +1,6 @@
-    export interface IUser {
+import { IProduct } from './product.interface';
+
+export interface IUser {
     id: number;
     name: string;
     age: number;
@@ -7,6 +9,5 @@
     password: string;
     createdAt: string;
     deletedAt?: string;
-    //products: IProduct[];
+    products?: IProduct[];
 }
-
