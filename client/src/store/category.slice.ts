@@ -6,11 +6,12 @@ import { categoryService } from '../services';
 import { IStateCategory } from '../interfaces';
 
 export const getAllCategories = createAsyncThunk(
-  'movieSlice/getAllMovie',
+  'categorySlice/getAllCategories',
 
   async () => {
     try {
       const categories = await categoryService.getAll();
+      console.log(categories, 'slice');
 
       return { category: categories };
     } catch (e) {
@@ -39,6 +40,7 @@ const categorySlice = createSlice({
     [getAllCategories.fulfilled.type]: (state: Draft<IStateCategory>, action: PayloadAction<any>) => {
       state.status = 'fulfilled';
       state.categories = action.payload.category;
+      console.log(state.categories, '0');
     },
     [getAllCategories.rejected.type]: (state: Draft<IStateCategory>, action: PayloadAction<string>) => {
       state.status = 'reject';
