@@ -2,7 +2,7 @@ import { getManager } from 'typeorm';
 
 import { Category } from '../entity';
 import { ICategory } from '../interfaces';
-import {commonRepository} from "../repositories/common/commonRepository";
+import { commonRepository } from '../repositories/common/commonRepository';
 
 class CommonService {
     public async getCategories(): Promise<ICategory[]> {
