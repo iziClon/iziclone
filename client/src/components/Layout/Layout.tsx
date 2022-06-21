@@ -1,8 +1,6 @@
 import React, { FC } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import '../../common-styles/index.css';
-import '../../common-styles/normalize.css';
 import { Header } from '../Header/Header';
 import css from './Layout.module.css';
 

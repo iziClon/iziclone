@@ -1,0 +1,96 @@
+.nav {
+    display: flex;
+    align-items: center;
+    width: 30%;
+}
+
+.menu {
+    margin: 0 10%;
+}
+
+.menu:hover {
+    border-radius: 10px;
+    background-color: var(--dark-blue);
+}
+
+.categoriesListIcon {
+    color: var(--white);
+}
+
+.categoriesListBtn {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 8px;
+}
+
+.categoriesListWrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.categoriesListIcon {
+    height: 20px;
+    width: 20px;
+    font-weight: 500;
+}
+
+.categoriesListIcon, .categoriesListText {
+    color: var(--white);
+}
+
+.categoriesListText {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+@media(max-width: 992px) {
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .categoriesListBtn {
+        padding: 4px;
+    }
+
+    .categoriesListIcon {
+        height: 14px;
+        width: 14px;
+    }
+    .categoriesListText{
+        font-size: 10px;
+    }
+}
+
+@media(max-width: 768px) {
+
+    .nav{
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 14px;
+    }
+
+    .categoriesListText{
+        display: none;
+    }
+
+    .categoriesListIcon{
+        height: 18px;
+        width: 18px;
+    }
+    .nav{
+        justify-content: space-around;
+    }
+}
+
+@media(max-width: 420px) {
+    .logo{
+        display: none;
+    }
+
+}
