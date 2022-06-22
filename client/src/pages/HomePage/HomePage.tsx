@@ -1,12 +1,49 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
-import { useAppSelector } from '../../hook';
+import { useAppDispatch, useAppSelector } from '../../hook';
+import { getAllCategories } from '../../store';
+import { CarouselComponent } from '../../components/Carousel';
+import css from './HomePage.module.css';
 
 const HomePage: FC = () => {
   const { categories } = useAppSelector((state) => state.categories);
-  console.log(categories, 'homePage');
 
-  return (<p>HomePage</p>);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(getAllCategories());
+  }, []);
+
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
+
+  return (
+    <div>
+      <Carousel className={css.carousel} responsive={responsive}>
+        {categories.map(
+          (category) => <CarouselComponent key={category.id} category={category} />,
+        )}
+      </Carousel>
+    </div>
+  );
 };
 
 export { HomePage };

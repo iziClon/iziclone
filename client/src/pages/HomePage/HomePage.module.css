@@ -1,0 +1,8 @@
+.carousel {
+    display: flex;
+    flex-wrap: wrap;
+}
+.carousel li {
+    width: 110px!important;
+    height: 170px;
+}
