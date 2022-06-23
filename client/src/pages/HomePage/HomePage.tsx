@@ -17,10 +17,6 @@ const HomePage: FC = () => {
   }, []);
 
   const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
       items: 3,
@@ -30,13 +26,15 @@ const HomePage: FC = () => {
       items: 2,
     },
     mobile: {
+
+
       breakpoint: { max: 464, min: 0 },
       items: 1,
     },
   };
 
   return (
-    <div>
+    <div className={css.list}>
       <Carousel className={css.carousel} responsive={responsive}>
         {categories.map(
           (category) => <CarouselComponent key={category.id} category={category} />,

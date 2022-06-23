@@ -6,3 +6,6 @@
     width: 110px!important;
     height: 170px;
 }
+.carousel ul {
+    max-inline-size: 1000px !important;
+}
