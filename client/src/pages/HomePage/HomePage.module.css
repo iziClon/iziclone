@@ -1,0 +1,12 @@
+.carousel {
+    display: flex;
+    margin-left:170px;
+    max-inline-size: 1200px !important;
+}
+.carousel li {
+    width: 229px!important;
+    height: 170px;
+}
+.carousel ul {
+    max-inline-size: auto !important;
+}
