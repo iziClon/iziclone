@@ -13,7 +13,7 @@ const CarouselComponent: FC <{category: ICategory}> = (
 ) => (
   <div className={css.category}>
     <h2 className={css.icon}>icon</h2>
-    <h2 className={css.title}>{nameCategory}</h2>
+    <h2>{nameCategory}</h2>
   </div>
 );
 

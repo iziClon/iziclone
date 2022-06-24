@@ -19,23 +19,21 @@ const HomePage: FC = () => {
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3,
+      items: 6,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 2,
+      items: 4,
     },
     mobile: {
-
-
       breakpoint: { max: 464, min: 0 },
-      items: 1,
+      items: 2,
     },
   };
 
   return (
-    <div className={css.list}>
-      <Carousel className={css.carousel} responsive={responsive}>
+    <div>
+      <Carousel className={css.carousel} containerClass="width: 1200px !important" responsive={responsive}>
         {categories.map(
           (category) => <CarouselComponent key={category.id} category={category} />,
         )}
