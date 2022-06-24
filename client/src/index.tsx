@@ -8,11 +8,11 @@ import './common-styles/normalize.css';
 import App from './App';
 import { setupStore } from './store';
 
+const store = setupStore();
+
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement,
 );
-
-const store = setupStore();
 
 root.render(
   <React.StrictMode>

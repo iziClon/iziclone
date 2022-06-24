@@ -1,2 +1,2 @@
-export * from './category.slice';
+export * from './slices/index';
 export * from './store';
