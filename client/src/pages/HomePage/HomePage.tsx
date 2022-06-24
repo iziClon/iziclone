@@ -33,7 +33,7 @@ const HomePage: FC = () => {
 
   return (
     <div>
-      <Carousel className={css.carousel} containerClass="width: 1200px !important" responsive={responsive}>
+      <Carousel className={css.carousel} responsive={responsive}>
         {categories.map(
           (category) => <CarouselComponent key={category.id} category={category} />,
         )}
