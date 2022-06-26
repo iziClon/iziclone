@@ -15,6 +15,9 @@ app.use(cookieParser());
 
 app.use(apiRouter);
 
+// @ts-ignore
+global.rootDir = __dirname;
+
 app.listen(5200, async () => {
     console.log('Server has started on Port: 5200');
     try {
