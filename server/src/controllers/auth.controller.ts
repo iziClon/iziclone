@@ -8,8 +8,8 @@ class AuthController {
     public async registration(req: Request, res: Response, next:NextFunction) {
         try {
             const { email, name } = req.body;
-            const newUser = await authService.registration(req.body);
 
+            const newUser = await authService.registration(req.body);
             await emailService.sendEmail(email, emailEnum.WELCOME, { username: name });
 
             res.cookie('refreshToken', newUser.refreshToken, {
@@ -25,8 +25,8 @@ class AuthController {
     public async login(req: Request, res: Response, next:NextFunction) {
         try {
             const { email, password } = req.body;
-            const userFromDB = await authService.login(email, password);
 
+            const userFromDB = await authService.login(email, password);
             await emailService.sendEmail(email, emailEnum.LOGIN, { username: userFromDB.name });
 
             res.cookie('refreshToken', userFromDB.refreshToken, {
