@@ -4,6 +4,7 @@ import bcrypt from 'bcrypt';
 import { ITokendata, IUser } from '../interfaces';
 import { User } from '../entity';
 import { tokenService } from './token.service';
+import { ErrorHandler } from '../error/errorHandler';
 
 class AuthService {
     async registration(user:IUser):Promise<ITokendata> {
@@ -27,13 +28,13 @@ class AuthService {
         const user = await getManager().getRepository(User).findOne({ email });
 
         if (!user) {
-            throw new Error(`User with this ${email} doesn't exist`);
+            throw new ErrorHandler(`User with this ${email} doesn't exist`, 400);
         }
 
         const isPasswordEqual = await bcrypt.compare(password, user.password);
 
         if (!isPasswordEqual) {
-            throw new Error('Password or email is wrong');
+            throw new ErrorHandler('Password or email is wrong');
         }
 
         const tokens = tokenService.generateToken({ email, userId: user.id });
@@ -48,7 +49,6 @@ class AuthService {
     async logout(refreshToken:string) {
         return tokenService.removeToken(refreshToken);
     }
-
 }
 
 export const authService = new AuthService();

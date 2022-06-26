@@ -1,8 +1,9 @@
 import { Response, Request, NextFunction } from 'express';
 import { getManager } from 'typeorm';
-import { authValidator } from '../validators/auth.validator';
 
+import { authValidator } from '../validators/auth.validator';
 import { User } from '../entity';
+import { ErrorHandler } from '../error/errorHandler';
 
 class AuthMiddleware {
     async checkIsUserExists(req:Request, res:Response, next:NextFunction) {
@@ -13,11 +14,13 @@ class AuthMiddleware {
             const checkPhone = await getManager().getRepository(User).findOne({ phone });
 
             if (checkEmail) {
-                throw new Error(`User with this email ${email} exists`);
+                next(new ErrorHandler(`User with this email ${email} has exist`, 400));
+                return;
             }
 
             if (checkPhone) {
-                throw new Error(`User with this number ${phone} exists`);
+                next(new ErrorHandler(`User with this phone ${phone} has exist`, 400));
+                return;
             }
 
             next();
@@ -31,7 +34,8 @@ class AuthMiddleware {
             const { error, value } = authValidator.registration.validate(req.body);
 
             if (error) {
-                next(new Error('Some fields are not valid'));
+                next(new ErrorHandler('Some fields are not validate', 400));
+                return;
             }
 
             req.body = value;

@@ -13,7 +13,6 @@ class CommonService {
     }
 
     public async createCategory(category: ICategory): Promise<ICategory> {
-        console.log(category, 'category');
         return commonRepository.createCategory(category);
     }
 }

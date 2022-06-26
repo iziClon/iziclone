@@ -31,8 +31,7 @@ class TokenService {
 
     async removeToken(refreshToken:string) {
         return getManager().getRepository(Token).delete({ refreshToken });
-    };
-
+    }
 }
 
 export const tokenService = new TokenService();
