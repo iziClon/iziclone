@@ -5,6 +5,7 @@ import cors from 'cors';
 import { createConnection } from 'typeorm';
 
 import { apiRouter } from './routes';
+import {config} from "./configs";
 
 const app = express();
 app.use(cors());
@@ -18,8 +19,10 @@ app.use(apiRouter);
 // @ts-ignore
 global.rootDir = __dirname;
 
-app.listen(5200, async () => {
-    console.log('Server has started on Port: 5200');
+const PORT = config.PORT;
+
+app.listen(PORT, async () => {
+    console.log(`Server has started on Port: ${PORT}`);
     try {
         const connection = await createConnection();
         if (connection) {
