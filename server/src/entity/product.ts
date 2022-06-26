@@ -5,18 +5,7 @@ import {
 import { CommonFields } from './commonFields';
 import { Category } from './category';
 import { User } from './user';
-import { IProduct } from '../interfaces/product.interface';
-
-// export interface IProduct {
-//     id:number;
-//     categoryId:number;
-//     userId:number;
-//     title: string;
-//     description: string;
-//     price: number;
-//     year?: number;
-//     status: boolean;
-// }
+import { IProduct } from '../interfaces';
 
 @Entity('Products', { database: 'uwETQSYns8' })
 export class Product extends CommonFields implements IProduct {

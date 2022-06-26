@@ -46,8 +46,7 @@
                 "js": "never",
                 "jsx": "never",
                 "ts": "never",
-                "tsx": "never",
-                "linebreak-style": ["error", "windows"]
+                "tsx": "never"
             }
         ],
         "react/react-in-jsx-scope": "off",
@@ -77,6 +76,8 @@
         "import/prefer-default-export": "off",
         "no-duplicate-imports": "error",
         "node/no-unsupported-features/es-syntax": "off",
-        "react/jsx-one-expression-per-line": "off"
+        "react/jsx-one-expression-per-line": "off",
+        "linebreak-style": ["error", "windows"],
+        "no-param-reassign": [2, { "props": false }]
     }
 }
