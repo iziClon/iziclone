@@ -8,9 +8,16 @@
 .icon {
     width: 100px;
     height: 100px;
-    border: 1px solid black;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background-color: lightgrey;
     border-radius: 50px;
     text-align: center;
+}
+.category img {
+    width: 44px;
+    height: 44px;
 }
 .category h2 {
     margin-top: 20px;

@@ -4,3 +4,4 @@ export * from './Logo/Logo';
 export * from './NavMenu/NavMenu';
 export * from './SearchForm/SearchForm';
 export * from './UserMenu/UserMenu';
+export * from './ProductCard/ProductCard';

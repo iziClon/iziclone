@@ -1,8 +1,7 @@
 import { getManager } from 'typeorm';
 
-import { Category } from '../entity';
-import { ICategory } from '../interfaces';
-import { commonRepository } from '../repositories/common/commonRepository';
+import {Category, Product} from '../entity';
+import {ICategory, IProduct} from '../interfaces';
 
 class CommonService {
     public async getCategories(): Promise<ICategory[]> {
@@ -12,8 +11,13 @@ class CommonService {
             .getMany();
     }
 
+    public async getProductsByCategory(categoryId: number): Promise<IProduct[]> {
+        return getManager().getRepository(Product)
+            .find({ categoryId });
+    }
+
     public async createCategory(category: ICategory): Promise<ICategory> {
-        return commonRepository.createCategory(category);
+        return getManager().getRepository(Category).save(category);
     }
 }
 

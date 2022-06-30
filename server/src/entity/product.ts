@@ -53,6 +53,13 @@ export class Product extends CommonFields implements IProduct {
     })
         status: boolean;
 
+    @Column({
+        type: 'varchar',
+        width: 255,
+        nullable: false,
+    })
+        image: string;
+
     @ManyToOne(() => Category, (category) => category.products)
     @JoinColumn({ name: 'categoryId' })
         category: Category;
