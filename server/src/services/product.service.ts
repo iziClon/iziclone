@@ -11,6 +11,11 @@ class ProductService {
             .getMany();
     }
 
+    // public async getProductsByCategory(categoryId: number): Promise<IProduct[]> {
+    //     return getManager().getRepository(Product)
+    //         .find({ categoryId });
+    // }
+
     public async createProduct(product: IProduct): Promise<IProduct> {
         return getManager().getRepository(Product).save(product);
     }

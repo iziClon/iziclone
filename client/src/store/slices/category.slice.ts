@@ -3,7 +3,7 @@ import {
 } from '@reduxjs/toolkit';
 
 import { categoryService } from '../../services';
-import { IStateCategory } from '../../interfaces';
+import { IStateCategories, IStateCategory } from '../../interfaces';
 
 export const getAllCategories = createAsyncThunk(
   'categorySlice/getAllCategories',
@@ -38,7 +38,7 @@ const categorySlice = createSlice({
           state.error = null;
         },
     [getAllCategories.fulfilled.type]:
-        (state: Draft<IStateCategory>, action: PayloadAction<any>) => {
+        (state: Draft<IStateCategory>, action: PayloadAction<IStateCategories>) => {
           state.status = 'fulfilled';
           state.categories = action.payload.category;
         },

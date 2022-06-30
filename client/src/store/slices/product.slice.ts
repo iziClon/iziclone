@@ -3,7 +3,7 @@ import {
 } from '@reduxjs/toolkit';
 
 import { productService } from '../../services';
-import { IStateProduct } from '../../interfaces';
+import { IStateProduct, IStateProducts } from '../../interfaces';
 
 export const getAllProducts = createAsyncThunk(
   'productSlice/getAllProducts',
@@ -38,12 +38,18 @@ const productSlice = createSlice({
               state.error = null;
             },
     [getAllProducts.fulfilled.type]:
-            (state: Draft<IStateProduct>, action: PayloadAction<any>) => {
+            (
+              state: Draft<IStateProduct>,
+              action: PayloadAction<IStateProducts>,
+            ) => {
               state.status = 'fulfilled';
               state.products = action.payload.product;
             },
     [getAllProducts.rejected.type]:
-            (state: Draft<IStateProduct>, action: PayloadAction<string>) => {
+            (
+              state: Draft<IStateProduct>,
+              action: PayloadAction<string>,
+            ) => {
               state.status = 'reject';
               state.error = action.payload;
             },
