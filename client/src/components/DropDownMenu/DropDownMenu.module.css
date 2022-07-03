@@ -1,5 +1,10 @@
 .menu{
+    width: 100%;
     padding: 15px 25px;
+    position: absolute;
+    top:70px;
+    z-index: 1001;/*мусила такий високий ставити, щоб перебити стрілочки від каруселі*/
+    background-color: var(--white);
 }
 
 @media(max-width: 768px) {

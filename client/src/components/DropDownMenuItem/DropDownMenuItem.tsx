@@ -2,9 +2,9 @@ import React, { FC } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
+import { Link } from 'react-router-dom';
 import css from './DropDownMenuItem.module.css';
 import { ICategory } from '../../interfaces';
-import {Link} from "react-router-dom";
 
 const DropDownMenuItem: FC <{category: ICategory}> = (
   {
@@ -18,7 +18,7 @@ const DropDownMenuItem: FC <{category: ICategory}> = (
 ) => (
   <li>
     <div className={css.container}>
-      <Link to='#' className={css.categoryLink}>
+      <Link to="#" className={css.categoryLink}>
         <div className={css.categoryWrapper}>
           <div className={css.categoryIcon}>
             <img src={icon} alt={`${nameCategory} Icon`} />
