@@ -47,3 +47,21 @@ color: var(--main-blue-color);
     width: 12px;
     font-weight: 500;
 }
+
+@media(max-width: 768px) {
+    .categoryWrapper {
+        width: 25%;
+    }
+}
+
+@media(max-width: 576px) {
+    .categoryWrapper {
+        width: 35%;
+    }
+}
+
+@media(max-width: 420px) {
+    .categoryWrapper {
+        width: 50%;
+    }
+}

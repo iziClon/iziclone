@@ -1,3 +1,9 @@
 .menu{
     padding: 15px 25px;
 }
+
+@media(max-width: 768px) {
+    .menu{
+        padding: 0 15px;
+    }
+}
