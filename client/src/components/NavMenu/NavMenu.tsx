@@ -5,7 +5,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { Logo } from '../Logo/Logo';
 import css from './NavMenu.module.css';
 
-const NavMenu: FC = () => (
+const NavMenu: FC =() => (
   <nav className={css.nav}>
     <Logo />
     <div className={css.menu}>

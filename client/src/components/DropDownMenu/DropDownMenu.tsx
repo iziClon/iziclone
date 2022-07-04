@@ -1,11 +1,11 @@
-import React, { FC, useEffect } from 'react';
+import React, {Dispatch, FC, SetStateAction, useEffect} from 'react';
 
 import css from './DropDownMenu.module.css';
 import { useAppDispatch, useAppSelector } from '../../hook';
 import { getAllCategories } from '../../store';
 import { DropDownMenuItem } from '../DropDownMenuItem/DropDownMenuItem';
 
-const DropDownMenu: FC = () => {
+const DropDownMenu: FC = ()=> {
   const { categories } = useAppSelector((state) => state.categories);
   const dispatch = useAppDispatch();
 
