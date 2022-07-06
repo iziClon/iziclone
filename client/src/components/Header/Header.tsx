@@ -1,13 +1,13 @@
-import React, {Dispatch, FC, SetStateAction} from 'react';
+import React, { FC } from 'react';
 
 import css from './Header.module.css';
 import { SearchForm } from '../SearchForm/SearchForm';
 import { NavMenu } from '../NavMenu/NavMenu';
 import { UserMenu } from '../UserMenu/UserMenu';
 
-const Header: FC = () =>(
+const Header: FC = () => (
   <div className={css.wrapper}>
-    <NavMenu/>
+    <NavMenu />
     <SearchForm />
     <UserMenu />
   </div>

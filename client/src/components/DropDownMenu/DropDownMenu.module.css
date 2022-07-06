@@ -1,6 +1,11 @@
 .menu{
+    display: none;
+}
+
+.active{
     width: 100%;
     padding: 15px 25px;
+    display: block;
     position: absolute;
     top:70px;
     z-index: 1001;/*мусила такий високий ставити, щоб перебити стрілочки від каруселі*/
