@@ -10,7 +10,7 @@ const DropDownMenuItem: FC <{category: ICategory}> = (
   {
     category:
             {
-              //  id,
+              id,
               icon,
               nameCategory,
             },
@@ -18,7 +18,7 @@ const DropDownMenuItem: FC <{category: ICategory}> = (
 ) => (
   <li>
     <div className={css.container}>
-      <Link to="#" className={css.categoryLink}>
+      <Link to={`/category/${id}`} className={css.categoryLink}>
         <div className={css.categoryWrapper}>
           <div className={css.categoryIcon}>
             <img src={icon} alt={`${nameCategory} Icon`} />
