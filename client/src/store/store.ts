@@ -3,11 +3,13 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import categorySliceReducer from './slices/category.slice';
 import productSliceReducer from './slices/product.slice';
 import productSByCategorySliceReducer from './slices/productsByCategory.slice';
+import activeMenuSliceReducer from './slices/menuActive.slice';
 
 const rootReducer = combineReducers({
   categories: categorySliceReducer,
   products: productSliceReducer,
   productsByCategory: productSByCategorySliceReducer,
+  activeMenu: activeMenuSliceReducer,
 });
 
 export const setupStore = () => configureStore({

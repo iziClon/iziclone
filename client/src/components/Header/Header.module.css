@@ -1,7 +1,6 @@
 .wrapper {
-    max-width: 1200px;
+    width: 100%;
     min-height: 70px;
-    margin: 0 auto;
     padding: 0 25px;
     display: flex;
     align-items: center;
