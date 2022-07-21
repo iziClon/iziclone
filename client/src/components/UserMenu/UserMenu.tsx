@@ -8,7 +8,7 @@ import css from './UserMenu.module.css';
 const UserMenu: FC = () => (
   <div className={css.userMenu}>
     <div>
-      <Link to="#">
+      <Link to="/createProduct">
         <div className={css.addAdvertisementWrapper}>
           <div><FontAwesomeIcon icon={faPlus} className={css.addAdvertisementIcon} /></div>
           <div className={css.addAdvertisementText}>Подати оголошення</div>
