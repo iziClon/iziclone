@@ -27,6 +27,8 @@ app.listen(PORT, async () => {
         const connection = await createConnection();
         if (connection) {
             console.log('DATABASE Connect');
+            //todo кинути запит в базу і перевірити чи хоч щось є
+            //todo run seed
         }
     } catch (err) {
         if (err) {
