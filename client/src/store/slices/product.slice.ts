@@ -19,6 +19,18 @@ export const getAllProducts = createAsyncThunk(
   },
 );
 
+// export const createProduct = createAsyncThunk(
+//   'productSlice/createProduct',
+//   async (product:IProduct, { dispatch }) => {
+//     try {
+//       const newProduct = await productService.create(product);
+//       dispatch(addProduct({ data: newProduct }));
+//     } catch (e) {
+//       console.log(e);
+//     }
+//   },
+// );
+
 const initialState:IStateProduct = {
   products: [],
   status: null,
@@ -29,7 +41,21 @@ const productSlice = createSlice({
   name: 'productSlice',
   initialState,
 
-  reducers: {},
+  reducers: {
+    // addProduct: (state, action) => {
+    //   state.products.push(action.payload.data);
+    // },
+    //
+    // changeStatus: (state, action) => {
+    //   // const item = state.text.find(item => item.id === action.payload.id);
+    //   // Object.assign(item, {status: !item.status})
+    //
+    //   // const index = state.text.findIndex(item => item.id === action.payload.id);
+    //   // const item = state.text[index];
+    //   // item.status = !item.status
+    //   // item.status?++state.completed:--state.completed
+    // },
+  },
 
   extraReducers: {
     [getAllProducts.pending.type]:
@@ -57,5 +83,7 @@ const productSlice = createSlice({
 });
 
 const productSliceReducer = productSlice.reducer;
+
+// export const { addProduct, changeStatus } = productSlice.actions;
 
 export default productSliceReducer;
