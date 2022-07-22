@@ -10,6 +10,7 @@ export class Category extends CommonFields implements ICategory {
         type: 'varchar',
         width: 255,
         nullable: false,
+        default: 'Послуги і бізнес'
     })
         nameCategory: string;
 
