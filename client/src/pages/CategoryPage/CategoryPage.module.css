@@ -28,6 +28,42 @@
     width: 25%;
 }
 
+.main{
+    width: 75%;
+}
+
+.sortBy{
+    width: 100%;
+}
+
+.sortByBtns{
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 8px;
+}
+
+.sortBtn{
+    font-weight: 400;
+    font-size: 13px;
+    background-color: var(--white);
+    color: inherit;
+    display: inline-block;
+    padding: 11px 15px;
+    border: 1px solid var(--grey-lines);
+    text-align: center;
+    text-decoration: none;
+    transition: background-color .15s,border-color .15s,color .15s;
+    appearance: none;
+    border-radius: 8px;
+    cursor: pointer;
+    max-width: 100%;
+}
+
+.sortBtn:hover{
+    color: var(--dark-blue);
+    border-color: var(--dark-blue);
+    background-color: var(--bg-grey);
+}
 .products {
     display: flex;
     flex-wrap: wrap;

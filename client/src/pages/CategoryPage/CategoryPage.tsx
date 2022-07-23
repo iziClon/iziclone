@@ -10,7 +10,7 @@ import { ProductCardComponent } from '../../components';
 const CategoryPage: FC = () => {
   const { productsByCategory } = useAppSelector((state) => state.productsByCategory);
   const { categories } = useAppSelector((state) => state.categories);
-  console.log(categories);
+
   const dispatch = useAppDispatch();
 
   const { categoryId } = useParams();
@@ -33,14 +33,26 @@ const CategoryPage: FC = () => {
       </div>
       <div className={style.wrapper}>
         <aside className={style.sidebar}>sidebar</aside>
-        <div className={css.products}>{productsByCategory.map(
-          (productByCategory) => (
-            <ProductCardComponent
-              key={productByCategory.id}
-              product={productByCategory}
-            />
-          ),
-        )}
+        <div className={style.main}>
+          <div className={style.sortBy}>
+            <div className={style.sortByBtns}>
+              <button className={style.sortBtn} type="button">По релевантності</button>
+              <button className={style.sortBtn} type="button">За датою</button>
+              <button className={style.sortBtn} type="button">Дешеві</button>
+              <button className={style.sortBtn} type="button">Дорогі</button>
+            </div>
+          </div>
+          <div>
+            <div className={css.products}>{productsByCategory.map(
+              (productByCategory) => (
+                <ProductCardComponent
+                  key={productByCategory.id}
+                  product={productByCategory}
+                />
+              ),
+            )}
+            </div>
+          </div>
         </div>
       </div>
     </div>
