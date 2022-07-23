@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { FC, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
@@ -15,25 +16,23 @@ import { storage } from '../../firebase';
 import css from './CreateProductPage.module.css';
 
 const CreateProductPage: FC = () => {
-  // const [myImage, setMyImage] = useState(null);
   const [image, setImage] = useState(null);
-  const [imageList, setImageList] = useState([]);
 
-  // const handleChange = (e: any) => {
-  //   if (e.target.files[0]) {
-  //     setMyImage(e.target.files[0]);
-  //   }
-  // };
+  const [imageList, setImageList] = useState([] as string[]);
+
+  const [myImage, setMyImage] = useState('');
+  console.log(myImage, 'myimage');
 
   const imageListRef = ref(storage, 'images/');
 
   const addImage = () => {
     if (image == null) return;
+    if (imageList == null) return;
     const imageRef = ref(storage, `images/${image + v4()}`);
     uploadBytes(imageRef, image).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((url) => {
-        // @ts-ignore
         setImageList((prev) => [...prev, url]);
+        setMyImage((prev) => url);
       });
     });
   };
@@ -42,16 +41,11 @@ const CreateProductPage: FC = () => {
     listAll(imageListRef).then((response) => {
       response.items.forEach((item) => {
         getDownloadURL(item).then((url) => {
-          // @ts-ignore
           setImageList((prev) => [...prev, url]);
         });
       });
     });
   }, []);
-
-  // console.log(image,'image')
-  // console.log(myImage,'myImage')
-  // console.log(imageList,'imageList')
 
   const {
     handleSubmit, register, reset,
@@ -64,6 +58,17 @@ const CreateProductPage: FC = () => {
   const dispatch = useDispatch();
 
   const submit = (product: any) => {
+    product = {
+      categoryId: +product.categoryId,
+      userId: +product.userId,
+      price: +product.price,
+      year: +product.year,
+      title: product.title,
+      description: product.description,
+      status: product.status,
+      image: myImage,
+    };
+    console.log(product, 'product');
     // @ts-ignore
     dispatch(createProduct(product));
     reset();
@@ -73,37 +78,41 @@ const CreateProductPage: FC = () => {
     <div>
       <h1>Подати оголошення</h1>
       <form onSubmit={handleSubmit(submit)} className={css.productForm}>
-        <input type="file"
-               onChange={(event) => {
-          // @ts-ignore
-                 setImage(event.target.files[0])
-        }} />
+        <input
+          type="file"
+          {...register('image')}
+          onChange={(event) => {
+            // @ts-ignore
+            setImage(event.target.files[0]);
+          }}
+        />
 
         <button onClick={addImage} type="button">Додати фото</button>
 
-        {imageList.map((url) => <img className={css.myImage} src={url} alt="image" />)}
+        <img className={css.myImage} src={myImage} alt="" />
 
-        <label>Категорія * :
+        <label htmlFor="categoryId">Категорія * :
           <select id="categoryId" {...register('categoryId')}>
-            {categories.map((category) => (<option value={category.id}>{category.nameCategory}</option>))}
+            {categories.map((category) => (
+              <option value={category.id}>{category.nameCategory}</option>))}
           </select>
         </label>
 
         <br />
 
-        <label>UserId * : <input type="number" {...register('userId')} /></label>
+        <label htmlFor="userId">UserId * : <input id="userId" type="number" {...register('userId')} /></label>
 
-        <label>Назва товару * : <input type="text" {...register('title')} /></label>
+        <label htmlFor="title">Назва товару * : <input id="title" type="text" {...register('title')} /></label>
 
-        <label>Опис товару * : <input type="text" {...register('description')} /></label>
+        <label htmlFor="description">Опис товару * : <input id="description" type="text" {...register('description')} /></label>
 
-        <label>Ціна товару або послуги * : <input type="number" {...register('price')} /></label>
+        <label htmlFor="price">Ціна товару або послуги * : <input id="price" type="number" {...register('price')} /></label>
 
-        <label>Рік випуску : <input type="number" {...register('year')} /></label>
+        <label htmlFor="year">Рік випуску : <input id="year" type="number" {...register('year')} /></label>
 
-        <label>Status : <input type="checkbox" {...register('status')} /></label>
+        <label htmlFor="status">Status : <input id="status" type="checkbox" {...register('status')} /></label>
         {/* <label>Image : <input type="text" {...register('image')} value="asdfghj" /></label> */}
-        <button>Подати оголошення</button>
+        <button type="button">Подати оголошення</button>
       </form>
     </div>
   );

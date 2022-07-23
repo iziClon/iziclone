@@ -3,7 +3,7 @@ import {
 } from '@reduxjs/toolkit';
 
 import { productService } from '../../services';
-import { IStateProduct, IStateProducts } from '../../interfaces';
+import { IProduct, IStateProduct, IStateProducts } from '../../interfaces';
 
 export const getAllProducts = createAsyncThunk(
   'productSlice/getAllProducts',
@@ -21,26 +21,9 @@ export const getAllProducts = createAsyncThunk(
 
 export const createProduct = createAsyncThunk(
   'productSlice/createProduct',
-  async (product: any, { dispatch }) => {
-    const categoryId = +product.categoryId;
-    const userId = +product.userId;
-    const price = +product.price;
-    const year = +product.year;
-    const title = product.title;
-    const description = product.description;
-    const status = product.status;
-    const image = product.image;
-      // const title = product.title;
-      // const description = product.description;
-      // const status = product.status;
-      // const image = product.image;
-
-    const myProduct = {
-      categoryId, userId, price, year, title, description, status, image,
-    };
-
+  async (product: IProduct, { dispatch }) => {
     try {
-      const newProduct = await productService.create(myProduct);
+      const newProduct = await productService.create(product);
       dispatch(addProduct({ data: newProduct }));
     } catch (e) {
       console.log(e);
@@ -61,7 +44,6 @@ const productSlice = createSlice({
   reducers: {
     addProduct: (state, action) => {
       state.products.push(action.payload.data);
-      console.log(action.payload.data, 'add');
     },
 
   },

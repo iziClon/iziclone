@@ -50,6 +50,12 @@
             }
         ],
         "react/react-in-jsx-scope": "off",
+        "no-use-before-define": ["error", {
+          "functions": false,
+          "classes": false,
+          "variables": false,
+          "allowNamedExports": false
+        }],
         "react/jsx-filename-extension": [
             2,
             {
