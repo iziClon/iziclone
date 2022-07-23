@@ -8,12 +8,13 @@ import { ProductCardComponent } from '../../components';
 
 const CategoryPage: FC = () => {
   const { productsByCategory } = useAppSelector((state) => state.productsByCategory);
+
   const dispatch = useAppDispatch();
 
   const { categoryId } = useParams();
 
   useEffect(() => {
-    dispatch(getAllProductsByCategory(+categoryId!));
+    dispatch(getAllProductsByCategory(categoryId!));
   }, []);
 
   return (

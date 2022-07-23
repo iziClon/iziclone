@@ -12,7 +12,7 @@ export const getAllProducts = createAsyncThunk(
     try {
       const products = await productService.getAll();
 
-        return { product: products.data };
+      return { product: products.data };
     } catch (e) {
       return e;
     }
@@ -21,13 +21,23 @@ export const getAllProducts = createAsyncThunk(
 
 export const createProduct = createAsyncThunk(
   'productSlice/createProduct',
-  async (product:any,{dispatch}) => {
-      console.log(product.product, 'slice');
+  async (product: any, { dispatch }) => {
+    const categoryId = +product.categoryId;
+    const userId = +product.userId;
+    const price = +product.price;
+    const year = +product.year;
+    const { title } = product;
+    const { description } = product;
+    const { status } = product;
+    const { image } = product;
+
+    const myProduct = {
+      categoryId, userId, price, year, title, description, status, image,
+    };
+
     try {
-        const newProduct = await productService.create(product);
-        console.log(newProduct,'new')
-        dispatch(addProduct({data: product.product}));
-        // await productService.create(product);
+      const newProduct = await productService.create(myProduct);
+      dispatch(addProduct({ data: newProduct }));
     } catch (e) {
       console.log(e);
     }
@@ -47,12 +57,8 @@ const productSlice = createSlice({
   reducers: {
     addProduct: (state, action) => {
       state.products.push(action.payload.data);
-      console.log(action.payload.data,'add')
+      console.log(action.payload.data, 'add');
     },
-
-    // addForm: (state, action) => {
-    //   state.form = action.payload.product;
-    // },
 
   },
 

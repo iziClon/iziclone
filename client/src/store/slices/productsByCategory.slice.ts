@@ -9,9 +9,9 @@ import { IProductByCategory } from '../../interfaces';
 export const getAllProductsByCategory = createAsyncThunk(
   'productSlice/getAllProductsByCategory',
 
-  async (categoryId :number) => {
+  async (categoryId :string) => {
     try {
-      const productsByCategory = await productService.getProductsByCategory(categoryId);
+      const productsByCategory = await productService.getProductsByCategory(+categoryId);
 
       return { allProductsByCategory: productsByCategory.data };
     } catch (e) {

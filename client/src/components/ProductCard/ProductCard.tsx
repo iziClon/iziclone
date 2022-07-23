@@ -16,6 +16,11 @@ const ProductCardComponent: FC <{product: IProduct}> = (
   },
 ) => (
   <div className={css.productCard}>
+    {/* <div> */}
+    {/*  {image.map((foto) => ( */}
+    {/*    <p>{foto}/</p> */}
+    {/*  ))} */}
+    {/* </div> */}
     <div>
       <img src={image} alt={title} />
     </div>
