@@ -26,10 +26,10 @@ export const createProduct = createAsyncThunk(
     const userId = +product.userId;
     const price = +product.price;
     const year = +product.year;
-    const { title } = product;
-    const { description } = product;
-    const { status } = product;
-    const { image } = product;
+    const title = product.title;
+    const description = product.description;
+    const status = product.status;
+    const image = product.image;
 
     const myProduct = {
       categoryId, userId, price, year, title, description, status, image,

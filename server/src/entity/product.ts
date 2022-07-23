@@ -12,7 +12,6 @@ export class Product extends CommonFields implements IProduct {
     @Column({
         type: 'int',
         nullable: false,
-        // default: 15,
     })
         categoryId: number;
 
