@@ -1,2 +1,2 @@
 export * from './CreateProductPage';
-export * from './CreateProductPage.css';
+export * from './CreateProductPage.module.css';
