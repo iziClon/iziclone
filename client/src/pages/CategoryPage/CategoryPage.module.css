@@ -37,11 +37,69 @@
     align-items: center;
 }
 
-.title{
-
+.filterTitle{
+    width: auto;
+    flex: 1;
+    line-height: 1.25em;
+    font-weight: 500;
+    display: inline;
+    font-size: 13px;;
 }
-.arrow{
 
+.filterArrow{
+    height: 12px;
+    width: 12px;
+    font-weight: 500;
+}
+
+.filterPriceContainer{
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 0;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.priceInputBox{
+    padding: 4px;
+    flex: 1;
+    width: auto;
+}
+
+.price{
+    padding: 8px;
+    max-height: 34px;
+    width: 100%;
+    border: 1px solid var(--grey-lines);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--black);
+    font-size: 13px;
+}
+
+.space{
+    padding: 4px;
+}
+
+.priceBtn{
+    margin: 0 8px;
+}
+
+.filterByPriceBtn{
+    background-color: var(--button-blue);
+    border-color: var(--button-blue);
+    color: var(--white);
+    line-height: 1em;
+    padding: 4px;
+}
+
+.priceBtnIcon{
+    color: var(--white);
+    width: 24px;
+    height: 24px;
 }
 
 .main{
@@ -80,6 +138,10 @@
     color: var(--dark-blue);
     border-color: var(--dark-blue);
     background-color: var(--bg-grey);
+}
+
+.categoryWrapper{
+    padding: 20px;
 }
 .products {
     display: flex;

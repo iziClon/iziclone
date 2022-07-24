@@ -1,6 +1,9 @@
 import React, { FC, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
 import { useAppDispatch, useAppSelector } from '../../hook';
 import { getAllProductsByCategory } from '../../store';
 import css from '../HomePage/HomePage.module.css';
@@ -32,18 +35,35 @@ const CategoryPage: FC = () => {
         <span className={style.advAmount}>  {productsByCategory.length} оголошення</span>
       </div>
       <div className={style.wrapper}>
-        <aside className={style.sidebar}>sidebar
+        <aside className={style.sidebar}>
           <div>
             <ul>
               <li className={style.listItem}>
                 <ul>
-                  <li className={style.listItem}>
+                  <li>
                     <div className={style.boxForFilterTitle}>
-                    <div className={style.title}></div>
-                    <div className={style.arrow}></div>
-                  </div>
+                      <div className={style.filterTitle}>Ціна, ₴</div>
+                      <div>
+                        <FontAwesomeIcon icon={faAngleRight} className={css.filterArrow} />
+                      </div>
+                    </div>
                   </li>
-                  <li></li>
+                  <li>
+                    <div className={style.filterPriceContainer}>
+                      <div className={style.priceInputBox}>
+                        <input name="priceGte" type="number" className={style.price} />
+                      </div>
+                      <div className={style.space}>-</div>
+                      <div className={style.priceInputBox}>
+                        <input name="priceLte" type="number" className={style.price} />
+                      </div>
+                      <div className={style.priceBtn}>
+                        <button type="button" className={style.filterByPriceBtn}>
+                          <FontAwesomeIcon icon={faCheck} className={style.priceBtnIcon} />
+                        </button>
+                      </div>
+                    </div>
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -58,15 +78,17 @@ const CategoryPage: FC = () => {
               <button className={style.sortBtn} type="button">Дорогі</button>
             </div>
           </div>
-          <div>
-            <div className={css.products}>{productsByCategory.map(
-              (productByCategory) => (
-                <ProductCardComponent
-                  key={productByCategory.id}
-                  product={productByCategory}
-                />
-              ),
-            )}
+          <div className={style.categoryWrapper}>
+            <div>
+              <div className={css.products}>{productsByCategory.map(
+                (productByCategory) => (
+                  <ProductCardComponent
+                    key={productByCategory.id}
+                    product={productByCategory}
+                  />
+                ),
+              )}
+              </div>
             </div>
           </div>
         </div>
