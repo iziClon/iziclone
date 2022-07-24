@@ -28,12 +28,29 @@
     width: 25%;
 }
 
+.listItem{
+    border-top: 1px solid var(--grey-lines);
+    padding: 28px 0;
+}
+.boxForFilterTitle{
+    display: flex;
+    align-items: center;
+}
+
+.title{
+
+}
+.arrow{
+
+}
+
 .main{
     width: 75%;
 }
 
 .sortBy{
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .sortByBtns{

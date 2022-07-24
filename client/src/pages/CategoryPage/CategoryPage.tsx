@@ -32,7 +32,23 @@ const CategoryPage: FC = () => {
         <span className={style.advAmount}>  {productsByCategory.length} оголошення</span>
       </div>
       <div className={style.wrapper}>
-        <aside className={style.sidebar}>sidebar</aside>
+        <aside className={style.sidebar}>sidebar
+          <div>
+            <ul>
+              <li className={style.listItem}>
+                <ul>
+                  <li className={style.listItem}>
+                    <div className={style.boxForFilterTitle}>
+                    <div className={style.title}></div>
+                    <div className={style.arrow}></div>
+                  </div>
+                  </li>
+                  <li></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </aside>
         <div className={style.main}>
           <div className={style.sortBy}>
             <div className={style.sortByBtns}>
