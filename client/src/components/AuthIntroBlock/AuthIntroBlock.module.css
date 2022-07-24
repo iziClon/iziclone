@@ -1,0 +1,37 @@
+.authIntroList {
+    margin: 28px;
+    position: relative;
+    align-self: start;
+}
+
+.authIntroItem {
+    display: flex;
+    align-items: center;
+    padding: 14px 0 14px 0;
+    column-gap: 24px;
+    max-width: 300px;
+}
+
+.authIntroItem span {
+    font-weight: bold;
+}
+
+.border {
+    position: absolute;
+    background-color: #d4d2d2;
+    height: 100%;
+    width: 1px;
+    top: 0;
+    bottom: 0;
+    right: -10%;
+}
+
+@media (max-width: 860px) {
+    .authIntroList {
+        margin: 0 auto;
+    }
+
+    .border {
+        display: none;
+    }
+}

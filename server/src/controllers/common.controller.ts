@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import {ICategory, IProduct} from '../interfaces';
+import { ICategory, IProduct } from '../interfaces';
 
 import { commonService } from '../services';
 

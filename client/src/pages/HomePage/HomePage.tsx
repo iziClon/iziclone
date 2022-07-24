@@ -2,10 +2,10 @@ import React, { FC, useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
+import css from './HomePage.module.css';
 import { useAppDispatch, useAppSelector } from '../../hook';
 import { getAllCategories, getAllProducts } from '../../store';
 import { CarouselComponent } from '../../components/Carousel';
-import css from './HomePage.module.css';
 import { ProductCardComponent } from '../../components';
 
 const HomePage: FC = () => {

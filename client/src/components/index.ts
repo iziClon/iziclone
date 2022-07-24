@@ -7,3 +7,6 @@ export * from './NavMenu/NavMenu';
 export * from './SearchForm/SearchForm';
 export * from './UserMenu/UserMenu';
 export * from './ProductCard/ProductCard';
+export * from './AuthIntroBlock/AuthIntroBlock';
+export * from './AuthForm/AuthForm';
+export * from './UserToolbar/UserToolbar';
