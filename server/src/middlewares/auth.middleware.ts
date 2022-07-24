@@ -29,9 +29,44 @@ class AuthMiddleware {
         }
     }
 
-    async validateRegistration(req:Request, res:Response, next:NextFunction):Promise<void> {
+    async checkValidEmail(req: Request, res: Response, next: NextFunction) {
         try {
-            const { error, value } = authValidator.registration.validate(req.body);
+            const { error } = await authValidator.emailParams.validate(req.params);
+            if (error) {
+                next(new ErrorHandler(error.message, 400));
+                return;
+            }
+
+            next();
+        } catch (e: any) {
+            next(e);
+        }
+    }
+
+    async checkIsUserAuth(req: Request, res: Response, next: NextFunction) {
+        try {
+            const { email } = req.params;
+
+            const checkEmail = await getManager()
+                .getRepository(User)
+                .findOne({ email });
+            if (!checkEmail) {
+                next(new ErrorHandler(`User with this email ${email} doesn't exist`, 404));
+                return;
+            }
+
+            next();
+        } catch (e) {
+            next(e);
+        }
+    }
+
+    async validateRegistration(req: Request, res: Response, next: NextFunction): Promise<void> {
+        try {
+            const {
+                error,
+                value
+            } = authValidator.registration.validate(req.body);
 
             if (error) {
                 next(new ErrorHandler('Some fields are not validate', 400));

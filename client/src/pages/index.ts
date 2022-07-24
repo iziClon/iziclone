@@ -1,2 +1,3 @@
 export * from './HomePage/HomePage';
-export * from './HomePage/HomePage.module.css';
+export * from './CategoryPage/CategoryPage';
+export * from './AuthPage/AuthPage';

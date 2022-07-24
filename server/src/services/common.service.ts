@@ -1,7 +1,7 @@
 import { getManager } from 'typeorm';
 
-import {Category, Product} from '../entity';
-import {ICategory, IProduct} from '../interfaces';
+import { Category, Product } from '../entity';
+import { ICategory, IProduct } from '../interfaces';
 
 class CommonService {
     public async getCategories(): Promise<ICategory[]> {

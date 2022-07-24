@@ -6,3 +6,6 @@ export * from './productsByCategory.interface';
 export * from './stateProducts.inteface';
 export * from './stateCategories.interface';
 export * from './stateActiveMenu.interface';
+export * from './user.interface';
+export * from './stateAuth.interface';
+export * from './userLoginData.interface';
