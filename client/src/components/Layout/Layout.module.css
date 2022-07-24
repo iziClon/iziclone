@@ -14,5 +14,10 @@
 }
 
 .footer{
+    width: 100%;
+    min-height: 50px;
+    padding: 0 25px;
+    background-color: var(--main-blue-color);
     flex: 0 0 auto;
+    color: white;
 }

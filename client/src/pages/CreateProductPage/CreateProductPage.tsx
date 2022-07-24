@@ -21,7 +21,6 @@ const CreateProductPage: FC = () => {
   const [imageList, setImageList] = useState([] as string[]);
 
   const [myImage, setMyImage] = useState('');
-  console.log(myImage, 'myimage');
 
   const imageListRef = ref(storage, 'images/');
 
@@ -75,45 +74,114 @@ const CreateProductPage: FC = () => {
   };
 
   return (
-    <div>
-      <h1>Подати оголошення</h1>
-      <form onSubmit={handleSubmit(submit)} className={css.productForm}>
-        <input
-          type="file"
-          {...register('image')}
-          onChange={(event) => {
-            // @ts-ignore
-            setImage(event.target.files[0]);
-          }}
-        />
+    <div className={css.createProduct}>
 
-        <button onClick={addImage} type="button">Додати фото</button>
+      <div className={css.header}>
+        <h1>Подача оголошення</h1>
+      </div>
 
-        <img className={css.myImage} src={myImage} alt="" />
+      <div className={css.formAndDescription}>
 
-        <label htmlFor="categoryId">Категорія * :
-          <select id="categoryId" {...register('categoryId')}>
-            {categories.map((category) => (
-              <option value={category.id}>{category.nameCategory}</option>))}
-          </select>
-        </label>
+        <div className={css.productForm}>
 
-        <br />
+          <form onSubmit={handleSubmit(submit)}>
 
-        <label htmlFor="userId">UserId * : <input id="userId" type="number" {...register('userId')} /></label>
+            <div className={css.imageBox}>
 
-        <label htmlFor="title">Назва товару * : <input id="title" type="text" {...register('title')} /></label>
+              <div className={css.labelImage}>ФотографіЇ * :</div>
 
-        <label htmlFor="description">Опис товару * : <input id="description" type="text" {...register('description')} /></label>
+              <div>
+                <img className={css.myImage} src={myImage} alt="" />
+              </div>
 
-        <label htmlFor="price">Ціна товару або послуги * : <input id="price" type="number" {...register('price')} /></label>
+              <div className={css.divInputImage}>
 
-        <label htmlFor="year">Рік випуску : <input id="year" type="number" {...register('year')} /></label>
+                <input
+                  className={css.inputImage}
+                  id="image"
+                  type="file"
+                  {...register('image')}
+                  onChange={(event) => {
+                    // @ts-ignore
+                    setImage(event.target.files[0]);
+                  }}
+                />
 
-        <label htmlFor="status">Status : <input id="status" type="checkbox" {...register('status')} /></label>
-        {/* <label>Image : <input type="text" {...register('image')} value="asdfghj" /></label> */}
-        <button type="button">Подати оголошення</button>
-      </form>
+                <button className={css.addImage} onClick={addImage} type="button">Додати фото</button>
+
+              </div>
+
+            </div>
+
+            <label className={css.label} htmlFor="categoryId">Категорія * :
+
+              <select className={css.input} id="categoryId" {...register('categoryId')}>
+                {categories.map((category) => (
+                  <option value={category.id}>{category.nameCategory}</option>))}
+              </select>
+
+            </label>
+
+            <label className={css.label} htmlFor="userId">UserId * :
+              <input className={css.input} id="userId" type="number" {...register('userId')} />
+            </label>
+
+            <label className={css.label} htmlFor="title">Назва товару * :
+              <input className={css.input} id="title" type="text" {...register('title')} />
+            </label>
+
+            <label className={css.label} htmlFor="description">Опис товару * :
+              <input className={css.input} id="description" type="text" {...register('description')} />
+            </label>
+
+            <label className={css.label} htmlFor="price">Ціна товару або послуги * :
+              <input className={css.input} id="price" type="number" {...register('price')} />
+            </label>
+
+            <label className={css.label} htmlFor="year">Рік випуску :
+              <input className={css.input} id="year" type="number" {...register('year')} />
+            </label>
+
+            <label className={css.label} htmlFor="status">Status :
+              <input className={css.inputStatus} id="status" type="checkbox" {...register('status')} />
+            </label>
+
+            <button className={css.buttonForm}>Опублікувати</button>
+
+          </form>
+
+        </div>
+
+        <div className={css.rules}>
+
+          <div>
+            <h1 className={css.headerDescription}>Як сфотографувати товар?</h1>
+            <p>
+              Зробіть одну фотографію на телефон з різних ракурсів у звичайній обстановці.
+              Для покупців важливіше не краса фото, а реальний стан речей.
+            </p>
+          </div>
+
+          <div>
+            <h1 className={css.headerDescription}>Яку ціну поставити?</h1>
+            <p>
+              В середньому, при продажу з рук ставлять ціну зі знижкою від 20% до 50% від вартості
+              нового товару залежно від його стану.
+            </p>
+          </div>
+
+          <div>
+            <h1 className={css.headerDescription}>Як описати товар?</h1>
+            <p>
+              Напишіть причину продажу товару, як і скільки ним користувались. Розкажіть про свої
+              враження і рекомендації майбутньому власнику.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
   );
 };

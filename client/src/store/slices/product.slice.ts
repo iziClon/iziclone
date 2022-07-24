@@ -24,6 +24,7 @@ export const createProduct = createAsyncThunk(
   async (product: IProduct, { dispatch }) => {
     try {
       const newProduct = await productService.create(product);
+      console.log(product, 'product');
       dispatch(addProduct({ data: newProduct }));
     } catch (e) {
       console.log(e);
