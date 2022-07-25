@@ -7,11 +7,11 @@ import activeMenuSliceReducer from './slices/menuActive.slice';
 import authSliceReducer from './slices/auth.slice';
 
 const rootReducer = combineReducers({
-    categories: categorySliceReducer,
-    products: productSliceReducer,
-    productsByCategory: productSByCategorySliceReducer,
-    activeMenu: activeMenuSliceReducer,
-    auth: authSliceReducer,
+  categories: categorySliceReducer,
+  products: productSliceReducer,
+  productsByCategory: productSByCategorySliceReducer,
+  activeMenu: activeMenuSliceReducer,
+  auth: authSliceReducer,
 });
 
 export const setupStore = () => configureStore({

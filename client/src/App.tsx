@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import { Router } from './router';
 
 const App: FC = () => (
-    <Router/>
+  <Router />
 );
 
 export default App;

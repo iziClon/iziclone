@@ -19,7 +19,7 @@ const DropDownMenu: FC = () => {
   return (
     <div className={showDropDown}>
       <ul>
-        {categories.map((category) => <DropDownMenuItem key={category.id} category={category} />)}
+        {categories && categories.map((item) => <DropDownMenuItem key={item.id} category={item} />)}
       </ul>
     </div>
   );

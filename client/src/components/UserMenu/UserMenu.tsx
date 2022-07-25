@@ -8,26 +8,26 @@ import { useAppSelector } from '../../hook';
 import { UserToolbar } from '../UserToolbar/UserToolbar';
 
 const UserMenu = () => {
-    const { user } = useAppSelector((state) => state.auth);
+  const { user } = useAppSelector((state) => state.auth);
 
-    return (
-        <div className={css.userMenu}>
-            <div>
-                <Link to="/">
-                    <div className={css.addAdvertisementWrapper}>
-                        <div><FontAwesomeIcon icon={faPlus} className={css.addAdvertisementIcon}/>
-                        </div>
-                        <div className={css.addAdvertisementText}>Подати оголошення</div>
-                    </div>
-                </Link>
+  return (
+    <div className={css.userMenu}>
+      <div>
+        <Link to="/">
+          <div className={css.addAdvertisementWrapper}>
+            <div><FontAwesomeIcon icon={faPlus} className={css.addAdvertisementIcon} />
             </div>
-            {
+            <div className={css.addAdvertisementText}>Подати оголошення</div>
+          </div>
+        </Link>
+      </div>
+      {
                 !user
-                    ? <div className={css.login}><Link to="/login">Увійти</Link></div>
-                    : <UserToolbar/>
+                  ? <div className={css.login}><Link to="/login">Увійти</Link></div>
+                  : <UserToolbar />
             }
-        </div>
-    );
+    </div>
+  );
 };
 
 export { UserMenu };
