@@ -68,6 +68,7 @@ const CreateProductPage: FC = () => {
       image: myImage,
     };
     console.log(product, 'product');
+
     // @ts-ignore
     dispatch(createProduct(product));
     reset();
@@ -147,6 +148,7 @@ const CreateProductPage: FC = () => {
             </label>
 
             <button className={css.buttonForm}>Опублікувати</button>
+            {/*<button className={css.buttonForm} type="submit">Опублікувати</button>*/}
 
           </form>
 
