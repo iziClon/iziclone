@@ -1,9 +1,9 @@
 import {
-  createAsyncThunk, createSlice, Draft, PayloadAction,
+  createAsyncThunk, createSlice, Draft, PayloadAction, ThunkAction,
 } from '@reduxjs/toolkit';
 
 import { productService } from '../../services';
-import { IStateProduct, IStateProducts } from '../../interfaces';
+import { IProduct, IStateProduct, IStateProducts } from '../../interfaces';
 
 export const getAllProducts = createAsyncThunk(
   'productSlice/getAllProducts',
@@ -19,6 +19,18 @@ export const getAllProducts = createAsyncThunk(
   },
 );
 
+export const createProduct = createAsyncThunk<void, IProduct>(
+  'productSlice/createProduct',
+  async (product, { dispatch }) => {
+    try {
+      const newProduct = await productService.create(product);
+      dispatch(addProduct({ data: newProduct }));
+    } catch (e) {
+      console.log(e);
+    }
+  },
+);
+
 const initialState:IStateProduct = {
   products: [],
   status: null,
@@ -29,7 +41,12 @@ const productSlice = createSlice({
   name: 'productSlice',
   initialState,
 
-  reducers: {},
+  reducers: {
+    addProduct: (state, action) => {
+      state.products.push(action.payload.data);
+    },
+
+  },
 
   extraReducers: {
     [getAllProducts.pending.type]:
@@ -57,5 +74,7 @@ const productSlice = createSlice({
 });
 
 const productSliceReducer = productSlice.reducer;
+
+export const { addProduct } = productSlice.actions;
 
 export default productSliceReducer;

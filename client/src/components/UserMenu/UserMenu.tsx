@@ -13,7 +13,7 @@ const UserMenu = () => {
   return (
     <div className={css.userMenu}>
       <div>
-        <Link to="/">
+        <Link to="/createProduct">
           <div className={css.addAdvertisementWrapper}>
             <div><FontAwesomeIcon icon={faPlus} className={css.addAdvertisementIcon} />
             </div>
