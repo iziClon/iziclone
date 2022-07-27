@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable no-param-reassign */
 import React, { FC, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
@@ -31,7 +32,7 @@ const CreateProductPage: FC = () => {
     uploadBytes(imageRef, image).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((url) => {
         setImageList((prev) => [...prev, url]);
-        setMyImage((prev) => url);
+        setMyImage(() => url);
       });
     });
   };
@@ -64,10 +65,10 @@ const CreateProductPage: FC = () => {
       year: +product.year,
       title: product.title,
       description: product.description,
-      status: product.status,
+      status: false,
       image: myImage,
     };
-    console.log(product, 'product');
+
 
     // @ts-ignore
     dispatch(createProduct(product));
@@ -143,12 +144,7 @@ const CreateProductPage: FC = () => {
               <input className={css.input} id="year" type="number" {...register('year')} />
             </label>
 
-            <label className={css.label} htmlFor="status">Status :
-              <input className={css.inputStatus} id="status" type="checkbox" {...register('status')} />
-            </label>
-
-            <button className={css.buttonForm}>Опублікувати</button>
-            {/*<button className={css.buttonForm} type="submit">Опублікувати</button>*/}
+            <button className={css.buttonForm} type="submit">Опублікувати</button>
 
           </form>
 

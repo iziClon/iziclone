@@ -8,5 +8,5 @@ export const productService = {
   getProductsByCategory: (categoryId: number) => axiosService.get<any>(`${urls.common}/${categoryId}`),
   create: (myProduct: any) => axiosService
     .post(urls.product, myProduct)
-    .then((value) => console.log(value.data, 'service')),
+    .then((value) => value.data),
 };

@@ -84,7 +84,6 @@
         "no-duplicate-imports": "error",
         "node/no-unsupported-features/es-syntax": "off",
         "react/jsx-one-expression-per-line": "off",
-        "linebreak-style": ["error", "windows"],
-        "no-param-reassign": [2, { "props": false }]
+        "linebreak-style": ["error", "windows"]
     }
 }

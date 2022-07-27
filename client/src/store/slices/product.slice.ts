@@ -1,5 +1,5 @@
 import {
-    createAsyncThunk, createSlice, Draft, PayloadAction, ThunkDispatch,
+  createAsyncThunk, createSlice, Draft, PayloadAction, ThunkAction,
 } from '@reduxjs/toolkit';
 
 import { productService } from '../../services';
@@ -19,12 +19,11 @@ export const getAllProducts = createAsyncThunk(
   },
 );
 
-export const createProduct = createAsyncThunk<void,IProduct>(
+export const createProduct = createAsyncThunk<void, IProduct>(
   'productSlice/createProduct',
-  async (product,{dispatch}) => {
+  async (product, { dispatch }) => {
     try {
       const newProduct = await productService.create(product);
-      console.log(product, 'product');
       dispatch(addProduct({ data: newProduct }));
     } catch (e) {
       console.log(e);
