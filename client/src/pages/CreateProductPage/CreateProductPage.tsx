@@ -53,6 +53,8 @@ const CreateProductPage: FC = () => {
 
   const { categories } = useAppSelector((state) => state.categories);
 
+  const { user } = useAppSelector((state) => state.auth);
+
   categories.map((category) => category);
 
   const dispatch = useDispatch();
@@ -60,7 +62,7 @@ const CreateProductPage: FC = () => {
   const submit = (product: any) => {
     product = {
       categoryId: +product.categoryId,
-      userId: +product.userId,
+      userId: user?.id,
       price: +product.price,
       year: +product.year,
       title: product.title,
@@ -68,7 +70,6 @@ const CreateProductPage: FC = () => {
       status: false,
       image: myImage,
     };
-
 
     // @ts-ignore
     dispatch(createProduct(product));
@@ -119,13 +120,9 @@ const CreateProductPage: FC = () => {
 
               <select className={css.input} id="categoryId" {...register('categoryId')}>
                 {categories.map((category) => (
-                  <option value={category.id}>{category.nameCategory}</option>))}
+                  <option value={category.id} key={category.id}>{category.nameCategory}</option>))}
               </select>
 
-            </label>
-
-            <label className={css.label} htmlFor="userId">UserId * :
-              <input className={css.input} id="userId" type="number" {...register('userId')} />
             </label>
 
             <label className={css.label} htmlFor="title">Назва товару * :

@@ -1,5 +1,5 @@
 import {
-  createAsyncThunk, createSlice, Draft, PayloadAction, ThunkAction,
+  createAsyncThunk, createSlice, Draft, PayloadAction,
 } from '@reduxjs/toolkit';
 
 import { productService } from '../../services';
@@ -33,6 +33,7 @@ export const createProduct = createAsyncThunk<void, IProduct>(
 
 const initialState:IStateProduct = {
   products: [],
+  product: null,
   status: null,
   error: null,
 };
@@ -61,6 +62,8 @@ const productSlice = createSlice({
             ) => {
               state.status = 'fulfilled';
               state.products = action.payload.product;
+              // state.product = action.payload.data;
+              // console.log(state.product,'state product');
             },
     [getAllProducts.rejected.type]:
             (
@@ -70,6 +73,28 @@ const productSlice = createSlice({
               state.status = 'reject';
               state.error = action.payload;
             },
+    // [createProduct.pending.type]:
+    //     (state: Draft<IStateProduct>) => {
+    //         state.status = 'pending';
+    //         state.error = null;
+    //     },
+    // [createProduct.fulfilled.type]:
+    //     (
+    //         state: Draft<IStateProduct>,
+    //         action: PayloadAction<IStateCreateProduct>,
+    //     ) => {
+    //         state.status = 'fulfilled';
+    //         state.product = action.payload.product;
+    //         console.log(action.payload,'action')
+    //     },
+    // [createProduct.rejected.type]:
+    //     (
+    //         state: Draft<IStateProduct>,
+    //         action: PayloadAction<string>,
+    //     ) => {
+    //         state.status = 'reject';
+    //         state.error = action.payload;
+    //     },
   },
 });
 

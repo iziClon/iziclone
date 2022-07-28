@@ -20,7 +20,7 @@ const HomePage: FC = () => {
 
   useEffect(() => {
     dispatch(getAllProducts());
-  }, []);
+  }, [products]);
 
   const responsive = {
     desktop: {
