@@ -2,7 +2,6 @@
 /* eslint-disable no-param-reassign */
 import React, { FC, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
 import {
   ref,
   uploadBytes,
@@ -12,12 +11,12 @@ import {
 import { v4 } from 'uuid';
 
 import { createProduct } from '../../store';
-import { useAppSelector } from '../../hook';
+import { useAppDispatch, useAppSelector } from '../../hook';
 import { storage } from '../../firebase';
 import css from './CreateProductPage.module.css';
 
 const CreateProductPage: FC = () => {
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState<File | null>(null);
 
   const [imageList, setImageList] = useState([] as string[]);
 
@@ -57,7 +56,7 @@ const CreateProductPage: FC = () => {
 
   categories.map((category) => category);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const submit = (product: any) => {
     product = {
@@ -71,7 +70,6 @@ const CreateProductPage: FC = () => {
       image: myImage,
     };
 
-    // @ts-ignore
     dispatch(createProduct(product));
     reset();
   };
@@ -105,8 +103,8 @@ const CreateProductPage: FC = () => {
                   type="file"
                   {...register('image')}
                   onChange={(event) => {
-                    // @ts-ignore
-                    setImage(event.target.files[0]);
+                    const newFile = event.target.files as FileList;
+                    setImage(newFile[0]);
                   }}
                 />
 

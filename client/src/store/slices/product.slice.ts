@@ -19,17 +19,17 @@ export const getAllProducts = createAsyncThunk(
   },
 );
 
-export const createProduct = createAsyncThunk<void, IProduct>(
-  'productSlice/createProduct',
-  async (product, { dispatch }) => {
-    try {
-      const newProduct = await productService.create(product);
-      dispatch(addProduct({ data: newProduct }));
-    } catch (e) {
-      console.log(e);
-    }
-  },
-);
+// export const createProduct = createAsyncThunk<void, IProduct>(
+//   'productSlice/createProduct',
+//   async (product, { dispatch }) => {
+//     try {
+//       const newProduct = await productService.create(product);
+//       dispatch(addProduct({ data: newProduct }));
+//     } catch (e) {
+//       console.log(e);
+//     }
+//   },
+// );
 
 const initialState:IStateProduct = {
   products: [],
@@ -101,5 +101,17 @@ const productSlice = createSlice({
 const productSliceReducer = productSlice.reducer;
 
 export const { addProduct } = productSlice.actions;
+
+export const createProduct = createAsyncThunk<void, IProduct>(
+  'productSlice/createProduct',
+  async (product, { dispatch }) => {
+    try {
+      const newProduct = await productService.create(product);
+      dispatch(addProduct({ data: newProduct }));
+    } catch (e) {
+      console.log(e);
+    }
+  },
+);
 
 export default productSliceReducer;
