@@ -124,11 +124,11 @@ const AuthForm = () => {
               <label htmlFor="password">
                 Пароль
                 <input
-                            autoComplete="dadawd"
-                            type="password"
-                            id="password"
-                            {...register('password')}
-                          />
+                  autoComplete="dadawd"
+                  type="password"
+                  id="password"
+                  {...register('password')}
+                />
               </label>
             </div>
           ) : null}
