@@ -15,6 +15,7 @@ const ProductDetails: FC = () => {
 
     const {productId}: any = useParams();
 
+
     useEffect(() => {
         if (state) {
             setProduct(state);
@@ -87,7 +88,7 @@ const ProductDetails: FC = () => {
                     <h4>Опубліковано 26.07.2022</h4>
                     <h3>{product?.price} ₴</h3>
 
-                    <div style={{marginLeft:"-40px"}}>
+                    <div style={{marginLeft: "-40px"}}>
                         <Carousel responsive={responsiveSmall}
                                   partialVisbile
                                   infinite={true}
@@ -136,36 +137,11 @@ const ProductDetails: FC = () => {
                             </div>
                         </Carousel>
                     </div>
-
-                    <div>
-                        <div className={css.smallSlider}>
-                            <div>
-                                <img
-                                    src="https://izi.ua/cloud-cgi/static/izi-static/build/images/ukrposhta-z1Ic_.svg"
-                                    alt="Send"
-                                    style={{width: "30px", height: "30px"}}
-                                />
-                            </div>
-                            <div className={css.smallSlider_box}>
-                                <h2>Укрпошта 25₴</h2>
-                                <h3>Спеціальні тарифи для користувачів ІЗІ</h3>
-                            </div>
-
-                        </div>
-
-                        <div className={css.smallSlider}>
-                            <div>
-                                <img
-                                    src="https://izi.ua/cloud-cgi/static/izi-static/build/images/ukrposhta-z1Ic_.svg"
-                                    alt="Send"
-                                    style={{width: "30px", height: "30px"}}
-                                />
-                            </div>
-                            <div className={css.smallSlider_box}>
-                                <h2>Укрпошта 25₴</h2>
-                                <h3>Спеціальні тарифи для користувачів ІЗІ</h3>
-                            </div>
-
+                    <div className={css.address}>
+                        <img src="https://cdn-icons-png.flaticon.com/128/149/149060.png" alt="location"/>
+                        <div style={{display:"flex",flexDirection:"column",rowGap:"5px"}}>
+                            <h4 >Розташування:</h4>
+                            <h5>Львів</h5>
                         </div>
 
                     </div>
@@ -174,6 +150,20 @@ const ProductDetails: FC = () => {
                     <button type={"submit"} className={css.button_buy}>Купити</button>
                     <button type={"submit"} className={css.button_write}>Написати продавцеві</button>
 
+                    <div className={css.user}>
+                        <div className={css.user_header}>
+                            <img src="https://cdn-icons-png.flaticon.com/128/149/149071.png" alt="user"/>
+                            <div style={{display:'flex',flexDirection:"column",rowGap:"5px"}}>
+                                <h2>Василь</h2>
+                                <h4>Був 15 хв. назад</h4>
+                                <h5>З ІZICLONE 340 днів</h5>
+                            </div>
+
+                        </div>
+                        <div className={css.user_bottom}>
+                            <a href="#">Переглянути усі оголошення</a>
+                        </div>
+                    </div>
                 </div>
 
             </div>

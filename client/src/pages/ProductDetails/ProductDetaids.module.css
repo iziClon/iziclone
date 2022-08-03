@@ -1,20 +1,19 @@
 .container {
     display: flex;
-    padding: 0 25px;
-    width: 100%;
+    width: 95%;
     flex-direction: column;
-    margin-top: 50px;
+    margin: 50px 25px 0 25px;
 }
 
 .container_header {
     display: flex;
     width: 100%;
     column-gap: 2%;
-
+    height: 500px;
 }
 
 .container_image {
-    width: 70%;
+    width: 75%;
 }
 
 .carousel_image {
@@ -26,11 +25,12 @@
 
 .title {
     display: flex;
-    width: 30%;
+    width: 25%;
     height: 500px;
     flex-direction: column;
     padding-top: 20px;
     row-gap: 4%;
+    box-sizing: border-box;
 }
 
 .title h2 {
@@ -56,7 +56,7 @@
     justify-content: space-evenly;
     align-items: center;
     row-gap: 5%;
-    width: 70%;
+    width: 65%;
     margin-left: 70px;
 }
 
@@ -78,23 +78,28 @@
     row-gap: 5px;
 }
 
-.navigation {
-
+.address {
+    font-size: 14px;
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
 }
 
-.navigation_box{
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    row-gap: 5px;
+.address h4 {
+    color: black;
+    font-weight: bold;
+}
+
+.address img {
+    height: 20px;
+    width: 20px;
 }
 
 .button_buy {
     background: var(--main-blue-color);
     color: white;
-    height: 40px;
-    font-size: 18px;
+    height: 35px;
+    font-size: 16px;
     border-radius: 10px;
 }
 
@@ -102,9 +107,50 @@
     background: white;
     border: 1px solid #dee1ef;
     color: var(--main-blue-color);
-    height: 40px;
-    font-size: 18px;
+    height: 35px;
+    font-size: 16px;
     border-radius: 10px;
+}
+
+.user {
+    height: 130px;
+    border: 1px solid #dee1ef;
+    border-radius: 10px;
+}
+
+.user_header {
+    display: flex;
+    margin: 15px;
+    column-gap: 20px;
+}
+
+.user_header h2 {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.user_header h3 {
+    font-size: 14px;
+}
+
+.user_header h5 {
+    font-size: 14px;
+}
+
+
+.user_header img {
+    width: 55px;
+    height: 55px;
+}
+
+.user_bottom {
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #dee1ef;
+}
+.user_bottom a {
+    padding-top: 15px;
 }
 
 .bottom {
