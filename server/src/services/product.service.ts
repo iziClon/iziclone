@@ -16,6 +16,11 @@ class ProductService {
     //         .find({ categoryId });
     // }
 
+    public async getProductById(productId:number):Promise<IProduct | undefined> {
+       return  getManager().getRepository(Product).findOne({where:{id:productId}})
+
+    }
+
     public async createProduct(product: IProduct): Promise<IProduct> {
         return getManager().getRepository(Product).save(product);
     }

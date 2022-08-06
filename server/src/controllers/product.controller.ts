@@ -15,6 +15,12 @@ class ProductController {
     //     return res.json(getAllProductsByCategory);
     // }
 
+    public async getProductById(req:Request,res:Response):Promise<Response<IProduct>>{
+        const {id} = req.params;
+        const product = await productService.getProductById(+id);
+        return res.json(product);
+    }
+
     public async createProduct(req: Request, res: Response): Promise<Response<IProduct>> {
         const createdProduct = await productService.createProduct(req.body);
         return res.json(createdProduct);
