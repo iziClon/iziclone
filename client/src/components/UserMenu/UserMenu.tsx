@@ -13,13 +13,25 @@ const UserMenu = () => {
   return (
     <div className={css.userMenu}>
       <div>
-        <Link to="/">
-          <div className={css.addAdvertisementWrapper}>
-            <div><FontAwesomeIcon icon={faPlus} className={css.addAdvertisementIcon} />
-            </div>
-            <div className={css.addAdvertisementText}>Подати оголошення</div>
-          </div>
-        </Link>
+        {
+              !user
+                ? (
+                  <div className={css.addAdvertisementWrapper}>
+                    <div><FontAwesomeIcon icon={faPlus} className={css.addAdvertisementIcon} />
+                    </div>
+                    <div className={css.addAdvertisementText}><Link to="/login">Подати оголошення</Link></div>
+                  </div>
+                )
+                : (
+                  <Link to="/createProduct">
+                    <div className={css.addAdvertisementWrapper}>
+                      <div><FontAwesomeIcon icon={faPlus} className={css.addAdvertisementIcon} />
+                      </div>
+                      <div className={css.addAdvertisementText}>Подати оголошення</div>
+                    </div>
+                  </Link>
+                )
+          }
       </div>
       {
                 !user

@@ -1,0 +1,99 @@
+.createProduct {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+.header {
+    font-size: 22px;
+    font-weight: bold;
+    padding: 20px 0;
+    border-bottom: 1px solid lightgrey;
+}
+.formAndDescription {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.divInputImage {
+    width: 650px;
+    height: 180px;
+}
+.inputImage {
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    width: 650px;
+    height: 150px;
+}
+.productForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.labelImage {
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+}
+.label {
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+.input {
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    width: 650px;
+    height: 50px;
+    margin-left: 20px;
+}
+.inputStatus {
+    border: 1px solid lightgrey;
+    width: 650px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+.imageBox {
+    display: flex;
+    justify-content: space-between;
+}
+#myDIV {
+    display: none;
+}
+.imageProduct {
+    display: flex;
+}
+.myImage {
+    width: 150px;
+    height: 150px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+}
+.addImage {
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: lightgrey;
+    margin-top: 5px;
+}
+.headerDescription {
+    font-size: 13px;
+    font-weight: bold;
+    padding: 10px;
+}
+.buttonForm {
+    width: 115px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: var(--main-blue-color);
+    color: white;
+}
+.rules {
+    width: 18%;
+}

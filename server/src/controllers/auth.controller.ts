@@ -27,7 +27,7 @@ class AuthController {
             const { email, password } = req.body;
 
             const userFromDB = await authService.login(email, password);
-            await emailService.sendEmail(email, emailEnum.LOGIN, { username: userFromDB.name });
+            // await emailService.sendEmail(email, emailEnum.LOGIN, { username: userFromDB.name });
 
             res.cookie('refreshToken', userFromDB.refreshToken, {
                 maxAge: 30 * 24 * 60 * 60 * 1000,
