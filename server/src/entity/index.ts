@@ -3,3 +3,4 @@ export * from './commonFields';
 export * from './user';
 export * from './product';
 export * from './token';
+export * from './image';

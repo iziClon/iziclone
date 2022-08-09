@@ -10,3 +10,4 @@ export * from './user.interface';
 export * from './stateAuth.interface';
 export * from './userLoginData.interface';
 export * from './stateCreateProduct.inteface';
+export * from './image.interface';

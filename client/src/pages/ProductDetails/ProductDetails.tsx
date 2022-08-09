@@ -74,10 +74,10 @@ const ProductDetails: FC = () => {
             infinite
             ssr
           >
-            <div className={css.carousel_image} style={{ backgroundImage: `url(${product?.image})` }} />
-            <div className={css.carousel_image} style={{ backgroundImage: `url(${product?.image})` }} />
-            <div className={css.carousel_image} style={{ backgroundImage: `url(${product?.image})` }} />
-            <div className={css.carousel_image} style={{ backgroundImage: `url(${product?.image})` }} />
+            {/* <div className={css.carousel_image} style={{ backgroundImage: `url(${product?.image})` }} /> */}
+            {/* <div className={css.carousel_image} style={{ backgroundImage: `url(${product?.image})` }} /> */}
+            {/* <div className={css.carousel_image} style={{ backgroundImage: `url(${product?.image})` }} /> */}
+            {/* <div className={css.carousel_image} style={{ backgroundImage: `url(${product?.image})` }} /> */}
 
           </Carousel>
         </div>
