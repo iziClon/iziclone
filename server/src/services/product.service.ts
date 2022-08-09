@@ -7,14 +7,10 @@ class ProductService {
     public async getProducts(): Promise<IProduct[]> {
         return getManager()
             .getRepository(Product)
-            .createQueryBuilder('product')
-            .getMany();
+            // .createQueryBuilder('product')
+            .find({ relations: ['images'] })
+            // .getMany();
     }
-
-    // public async getProductsByCategory(categoryId: number): Promise<IProduct[]> {
-    //     return getManager().getRepository(Product)
-    //         .find({ categoryId });
-    // }
 
     public async getProductById(productId:number):Promise<IProduct | undefined> {
        return  getManager().getRepository(Product).findOne({where:{id:productId}})
