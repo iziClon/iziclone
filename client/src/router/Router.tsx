@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Layout } from '../components';
 
 
-import { HomePage, CategoryPage, AuthPage } from '../pages';
+import { HomePage, CategoryPage, AuthPage, CreateProductPage } from '../pages';
 import { ProductDetails } from '../pages/ProductDetails/ProductDetails';
 
 
