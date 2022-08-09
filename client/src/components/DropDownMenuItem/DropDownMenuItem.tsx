@@ -15,24 +15,26 @@ const DropDownMenuItem: FC <{category: ICategory}> = (
               nameCategory,
             },
   },
-) => (
-  <li>
-    <div className={css.container}>
-      <Link to={`/category/${id}`} className={css.categoryLink}>
-        <div className={css.categoryWrapper}>
-          <div className={css.categoryIcon}>
-            <img src={icon} alt={`${nameCategory} Icon`} />
+) => {
+    return (
+        <li>
+          <div className={css.container}>
+            <Link to={`/category/${id}`} className={css.categoryLink}>
+              <div className={css.categoryWrapper}>
+                <div className={css.categoryIcon}>
+                  <img src={icon} alt={`${nameCategory} Icon`} />
+                </div>
+                <div className={css.nameBlock}>
+                  <div>{nameCategory}</div>
+                  <div>
+                    <FontAwesomeIcon icon={faAngleRight} className={css.categoryArrow} />
+                  </div>
+                </div>
+              </div>
+            </Link>
           </div>
-          <div className={css.nameBlock}>
-            <div>{nameCategory}</div>
-            <div>
-              <FontAwesomeIcon icon={faAngleRight} className={css.categoryArrow} />
-            </div>
-          </div>
-        </div>
-      </Link>
-    </div>
-  </li>
-);
+        </li>
+    );
+}
 
 export { DropDownMenuItem };

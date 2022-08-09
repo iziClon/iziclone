@@ -12,7 +12,6 @@ export class CreateTableProducts1655464887216 implements MigrationInterface {
                 price INT NOT NULL,
                 year INT CHECK (year <= 2022),
                 status BOOLEAN NOT NULL,
-                image VARCHAR(255) NOT NULL,
                 FOREIGN KEY (categoryId) REFERENCES Categories (id) ON DELETE CASCADE,
                 FOREIGN KEY (userId) REFERENCES Users (id) ON DELETE CASCADE,
                 createdAt TIMESTAMP DEFAULT(UTC_TIMESTAMP()) NOT NULL,

@@ -1,7 +1,7 @@
 import { getManager, UpdateResult } from 'typeorm';
 
 import { Product } from '../entity';
-import { IProduct } from '../interfaces';
+import {IImage, IProduct } from '../interfaces';
 
 class ProductService {
     public async getProducts(): Promise<IProduct[]> {
@@ -33,7 +33,7 @@ class ProductService {
         price?: number,
         year?: number,
         status?: boolean,
-        image?: string,
+        images?: IImage[],
     ):Promise<UpdateResult> {
         return getManager().getRepository(Product)
             .update({ id }, {
@@ -43,7 +43,7 @@ class ProductService {
                 price,
                 year,
                 status,
-                image,
+                images,
             });
     }
 

@@ -4,3 +4,4 @@ export * from './category.interface';
 export * from './commonField.interface';
 export * from './product.interface';
 export * from './tokendata.interface';
+export * from './image.interface';
