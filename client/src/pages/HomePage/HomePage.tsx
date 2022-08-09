@@ -39,19 +39,17 @@ const HomePage: FC = () => {
 
   return (
     <div className={css.homePage}>
-      <div>
-        <div>
-          <Carousel className={css.carousel} responsive={responsive}>
-            {categories.map(
-              (category) => <CarouselComponent key={category.id} category={category} />,
-            )}
-          </Carousel>
-        </div>
+      <div className={css.home}>
+        <Carousel className={css.carousel} responsive={responsive}>
+          {categories && categories.map(
+            (category) => <CarouselComponent key={category.id} category={category} />,
+          )}
+        </Carousel>
+      </div>
 
-        <div className={css.products}>{products.map(
-          (product) => <ProductCardComponent key={product.id} product={product} />,
-        )}
-        </div>
+      <div className={css.products}>{products.map(
+        (product) => <ProductCardComponent key={product.id} product={product} />,
+      )}
       </div>
     </div>
   );

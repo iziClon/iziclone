@@ -9,12 +9,6 @@ class ProductController {
         return res.json(products);
     }
 
-    // public async getProductsByCategory(req: Request, res: Response): Promise<Response<IProduct[]>> {
-    //     const { categoryId } = req.params;
-    //     const getAllProductsByCategory = await productService.getProductsByCategory(+categoryId);
-    //     return res.json(getAllProductsByCategory);
-    // }
-
     public async getProductById(req:Request,res:Response):Promise<Response<IProduct>>{
         const {id} = req.params;
         const product = await productService.getProductById(+id);

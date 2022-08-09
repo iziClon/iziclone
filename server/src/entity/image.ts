@@ -19,7 +19,7 @@ export class Image extends CommonFields implements IImage {
         width: 255,
         nullable: false,
     })
-    image: string;
+    imageRef: string;
 
     @ManyToOne(() => Product, (product) => product.images)
     @JoinColumn({ name: 'productId' })
