@@ -12,9 +12,9 @@ const ProductCardComponent: FC<{ product: IProduct }> = ({ product }) => {
   return (
 
     <div className={css.productCard}>
-      <Link to={`productDetail/${id}`} state={product}>
+       <Link to={`productDetail/${id}`} state={product}>
         <img src={images[0].imageRef} alt={title} />
-      </Link>
+       </Link>
       <div className={css.info}>
         <div>
           <h2 className={css.title}>{title}</h2>

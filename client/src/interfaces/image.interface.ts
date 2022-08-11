@@ -1,5 +1,5 @@
 export interface IImage {
-    id:number;
+    id?:number;
     productId:number;
     imageRef: string;
 }

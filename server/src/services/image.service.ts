@@ -17,7 +17,7 @@ class ImageService {
     }
 
     public async createImage(image: IImage): Promise<IImage> {
-        return getManager().getRepository(Image).save(image);
+            return getManager().getRepository(Image).save(image);
     }
 
     public async updateImage(

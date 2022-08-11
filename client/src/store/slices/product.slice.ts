@@ -19,18 +19,6 @@ export const getAllProducts = createAsyncThunk(
   },
 );
 
-// export const createProduct = createAsyncThunk<void, IProduct>(
-//   'productSlice/createProduct',
-//   async (product, { dispatch }) => {
-//     try {
-//       const newProduct = await productService.create(product);
-//       dispatch(addProduct({ data: newProduct }));
-//     } catch (e) {
-//       console.log(e);
-//     }
-//   },
-// );
-
 const initialState:IStateProduct = {
   products: [],
   product: null,
@@ -46,7 +34,9 @@ const productSlice = createSlice({
     addProduct: (state, action) => {
       state.products.push(action.payload.data);
     },
-
+    // getAllProductByTitle: (state, action) => {
+    //     state.products.push(action.payload.data);
+    // },
   },
 
   extraReducers: {
@@ -62,8 +52,6 @@ const productSlice = createSlice({
             ) => {
               state.status = 'fulfilled';
               state.products = action.payload.product;
-              // state.product = action.payload.data;
-              // console.log(state.product,'state product');
             },
     [getAllProducts.rejected.type]:
             (
@@ -73,28 +61,6 @@ const productSlice = createSlice({
               state.status = 'reject';
               state.error = action.payload;
             },
-    // [createProduct.pending.type]:
-    //     (state: Draft<IStateProduct>) => {
-    //         state.status = 'pending';
-    //         state.error = null;
-    //     },
-    // [createProduct.fulfilled.type]:
-    //     (
-    //         state: Draft<IStateProduct>,
-    //         action: PayloadAction<IStateCreateProduct>,
-    //     ) => {
-    //         state.status = 'fulfilled';
-    //         state.product = action.payload.product;
-    //         console.log(action.payload,'action')
-    //     },
-    // [createProduct.rejected.type]:
-    //     (
-    //         state: Draft<IStateProduct>,
-    //         action: PayloadAction<string>,
-    //     ) => {
-    //         state.status = 'reject';
-    //         state.error = action.payload;
-    //     },
   },
 });
 
@@ -102,12 +68,12 @@ const productSliceReducer = productSlice.reducer;
 
 export const { addProduct } = productSlice.actions;
 
-export const createProduct = createAsyncThunk<void, IProduct>(
+export const createProduct = createAsyncThunk<void, any>(
   'productSlice/createProduct',
-  async (product, { dispatch }) => {
+  async (fullProduct, { dispatch }) => {
     try {
-      const newProduct = await productService.create(product);
-      dispatch(addProduct({ data: newProduct }));
+      const newProduct = await productService.create(fullProduct);
+      dispatch(addProduct({ data: newProduct.product }));
     } catch (e) {
       console.log(e);
     }

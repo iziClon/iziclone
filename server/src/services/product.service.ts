@@ -1,7 +1,7 @@
 import { getManager, UpdateResult } from 'typeorm';
 
 import { Product } from '../entity';
-import {IImage, IProduct } from '../interfaces';
+import { IImage, IProduct } from '../interfaces';
 
 class ProductService {
     public async getProducts(): Promise<IProduct[]> {
@@ -19,6 +19,8 @@ class ProductService {
 
     public async createProduct(product: IProduct): Promise<IProduct> {
         return getManager().getRepository(Product).save(product);
+        // return getManager().getRepository(Image).save(image);
+
     }
 
     public async updateProduct(

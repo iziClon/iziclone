@@ -5,7 +5,7 @@ const router = Router();
 
 router.get('/', imageController.getImages);
 router.get('/:productId', imageController.getImagesByProductId);
-router.post('/', imageController.createImage);
+// router.post('/', imageController.createImage);
 router.put('/:id', imageController.updateImage);
 router.delete('/:id', imageController.deleteImage);
 
