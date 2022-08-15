@@ -9,4 +9,5 @@ export * from './UserMenu/UserMenu';
 export * from './ProductCard/ProductCard';
 export * from './AuthIntroBlock/AuthIntroBlock';
 export * from './AuthForm/AuthForm';
+export * from './ProfileLayout/ProfileLayout';
 export * from './UserToolbar/UserToolbar';
