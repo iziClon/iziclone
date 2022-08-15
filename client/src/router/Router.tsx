@@ -8,6 +8,13 @@ import {
   HomePage, CategoryPage, AuthPage, CreateProductPage,
 } from '../pages';
 import { ProductDetails } from '../pages/ProductDetails/ProductDetails';
+import { MyProductsPage } from '../pages/MyProductsPage/MyProductsPage';
+import { MySalesPage } from '../pages/MySalesPage/MySalesPage';
+import { MyPurchasesPage } from '../pages/MyPurchasesPage/MyPurchasesPage';
+import { MyRatingAndReviewsPage } from '../pages/MyRatingAndReviewsPage/MyRatingAndReviewsPage';
+import { MyWalletBalancePage } from '../pages/MyWalletBalancePage/MyWalletBalancePage';
+import { MyFavouritesPage } from '../pages/MyFavouritesPage/MyFavouritesPage';
+import { MySettingsPage } from '../pages/MySettingsPage/MySettingsPage';
 
 
 const Router = () => (
@@ -19,7 +26,13 @@ const Router = () => (
       <Route path="/login" element={<AuthPage />} />
       <Route path="productDetail/:productId" element={<ProductDetails />} />
       <Route path="my" element={<ProfileLayout />}>
-        <Route />
+        <Route path="products" element={<MyProductsPage />} />
+        <Route path="sales" element={<MySalesPage />} />
+        <Route path="purchases" element={<MyPurchasesPage />} />
+        <Route path="rating-and-reviews" element={<MyRatingAndReviewsPage />} />
+        <Route path="wallet-balance" element={<MyWalletBalancePage />} />
+        <Route path="favourites" element={<MyFavouritesPage />} />
+        <Route path="settings" element={<MySettingsPage />} />
       </Route>
     </Route>
 
