@@ -163,7 +163,7 @@ const ProfileLayout: FC = () => (
         </div>
       </div>
     </aside>
-    <main>
+    <main className={css.profileMain}>
       <Outlet />
     </main>
   </section>

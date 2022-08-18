@@ -9,11 +9,11 @@
     width: 20%;
     min-width: 0;
     max-width: 100%;
-    padding: 24px 0px 24px 0px;
+    padding: 24px 0 24px 0;
 }
 
 .cabinetSidebar{
-    padding: 0px 8px 0px 8px;
+    padding: 0 8px 0 8px;
     border-radius: 8px;
     border-bottom: 1px solid var(--grey-lines);
     background-color: var(--white);
@@ -101,6 +101,18 @@ a:visited{
     background-color: #dfe1f0;
     border-radius: 8px;
     color: var(--main-blue-color);
+}
+
+.profileMain{
+    display: flex;
+    flex-direction: column;
+    margin-right: -24px;
+    padding: 0 24px 24px;
+    background: #f4f4f5;
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
 }
 
 
