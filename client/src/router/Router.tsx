@@ -15,6 +15,8 @@ import { MyRatingAndReviewsPage } from '../pages/MyRatingAndReviewsPage/MyRating
 import { MyWalletBalancePage } from '../pages/MyWalletBalancePage/MyWalletBalancePage';
 import { MyFavouritesPage } from '../pages/MyFavouritesPage/MyFavouritesPage';
 import { MySettingsPage } from '../pages/MySettingsPage/MySettingsPage';
+import { MyWalletBonusesPage } from '../pages/MyWalletBonusesPage/MyWalletBalancePage';
+import { MyWalletCardsPage } from '../pages/MyWalletCardsPage/MyWalletBalancePage';
 
 
 const Router = () => (
@@ -31,6 +33,8 @@ const Router = () => (
         <Route path="purchases" element={<MyPurchasesPage />} />
         <Route path="rating-and-reviews" element={<MyRatingAndReviewsPage />} />
         <Route path="wallet-balance" element={<MyWalletBalancePage />} />
+        <Route path="wallet-bonuses" element={<MyWalletBonusesPage />} />
+        <Route path="wallet-cards" element={<MyWalletCardsPage />} />
         <Route path="favourites" element={<MyFavouritesPage />} />
         <Route path="settings" element={<MySettingsPage />} />
       </Route>

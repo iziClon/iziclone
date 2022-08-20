@@ -1,5 +1,5 @@
 import React from 'react';
-import css from '../MySalesPage/MySalesPage.module.css';
+import css from './MyPurchasesPage.module.css';
 
 const MyPurchasesPage = () => (
   <section className={css.myPurchasesPageWrapper}>
