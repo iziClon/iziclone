@@ -115,4 +115,10 @@ a:visited{
     max-width: 100%;
 }
 
+@media only screen and (max-width: 960px) {
+.profileLayoutAside{
+display: none
+}
+}
+
 
