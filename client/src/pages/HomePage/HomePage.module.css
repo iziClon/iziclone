@@ -14,14 +14,60 @@
     margin-top: 20px;
 }
 .carousel li {
-    width: 229px!important;
+    width: 240px!important;
     height: 170px;
 }
 .carousel ul {
     max-inline-size: auto !important;
 }
 .products {
-    width: 100%;
+    width: 430px;
     display: flex;
     flex-wrap: wrap;
+}
+@media (max-width: 860px) {
+    .homePage {
+        display: flex;
+        justify-content: center;
+        padding: 0 130px;
+    }
+    .carousel {
+        max-inline-size: 570px !important;
+        margin-top: 10px;
+    }
+    .carousel li {
+        width: 145px!important;
+        height: 170px;
+    }
+}
+
+@media (max-width: 720px) {
+    .homePage {
+        display: flex;
+        justify-content: center;
+        padding: 0 60px;
+    }
+    .carousel {
+        max-inline-size: 575px !important;
+        margin-top: 10px;
+    }
+    .carousel li {
+        width: 115px!important;
+        height: 170px;
+    }
+}
+
+@media (max-width: 460px) {
+    .homePage {
+        padding: 0 15px;
+    }
+    .carousel {
+        max-inline-size: 460px !important;
+        margin-top: 10px;
+    }
+    .carousel li {
+        width: 90px!important;
+        height: 170px;
+        margin: 0 6px;
+    }
 }

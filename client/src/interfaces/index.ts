@@ -13,3 +13,7 @@ export * from './stateCreateProduct.inteface';
 export * from './image.interface';
 export * from './stateImage.interface';
 export * from './stateImages.interface';
+export * from './thisMyImage.interface';
+export * from './newImage.interface';
+export * from './productSubmit.interface';
+export * from './fullProduct.interface';

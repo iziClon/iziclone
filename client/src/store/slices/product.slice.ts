@@ -3,7 +3,7 @@ import {
 } from '@reduxjs/toolkit';
 
 import { productService } from '../../services';
-import { IProduct, IStateProduct, IStateProducts } from '../../interfaces';
+import { IStateProduct, IStateProducts } from '../../interfaces';
 
 export const getAllProducts = createAsyncThunk(
   'productSlice/getAllProducts',
@@ -34,9 +34,6 @@ const productSlice = createSlice({
     addProduct: (state, action) => {
       state.products.push(action.payload.data);
     },
-    // getAllProductByTitle: (state, action) => {
-    //     state.products.push(action.payload.data);
-    // },
   },
 
   extraReducers: {

@@ -24,6 +24,9 @@
     width: 650px;
     height: 150px;
 }
+.oneImage {
+    display: flex;
+}
 .productForm {
     display: flex;
     flex-direction: column;
@@ -59,7 +62,23 @@
 }
 .imageBox {
     display: flex;
+    /*width: 1200px;*/
     justify-content: space-between;
+}
+.allImage {
+    display: flex;
+    width: 500px;
+    flex-wrap: wrap;
+}
+.oneImage {
+    display:flex;
+    flex-direction: column;
+    margin: 2px;
+}
+.buttonImage {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    margin-top: 2px;
 }
 #myDIV {
     display: none;
@@ -100,3 +119,112 @@
 .a {
     width: 500px;
 }
+@media (max-width: 860px) {
+    .formAndDescription {
+        display: block;
+    }
+    /*.imageBox {*/
+    /*    display: flex;*/
+    /*    width: 680px;*/
+    /*    justify-content: space-between;*/
+    /*}*/
+    .allImage {
+        display: flex;
+        flex-wrap: wrap;
+        width: 310px;
+    }
+    .divInputImage {
+        width: 450px;
+        height: 180px;
+    }
+    .inputImage {
+        border: 1px solid lightgrey;
+        border-radius: 10px;
+        width: 450px;
+        height: 150px;
+    }
+    .myImage {
+        width: 140px;
+        height: 140px;
+    }
+    .input {
+        width: 450px;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+    .label {
+        padding: 0 0;
+    }
+    .rules {
+        width: 100%;
+    }
+}
+
+@media (max-width: 720px) {
+    .formAndDescription {
+        display: block;
+    }
+    .divInputImage {
+        width: 500px;
+        height: 180px;
+    }
+    .inputImage {
+        border: 1px solid lightgrey;
+        border-radius: 10px;
+        width: 500px;
+        height: 150px;
+    }
+    .allImage {
+        display: flex;
+        flex-direction: column;
+    }
+    .myImage {
+        width: 100px;
+        height: 100px;
+    }
+    .input {
+        width: 500px;
+        margin-left: 0;
+    }
+    .label {
+        padding: 0 0;
+    }
+    .rules {
+        width: 100%;
+    }
+}
+
+@media (max-width: 460px) {
+    .formAndDescription {
+        display: block;
+    }
+    .divInputImage {
+        width: 240px;
+        height: 180px;
+    }
+    .inputImage {
+        border: 1px solid lightgrey;
+        border-radius: 10px;
+        width: 240px;
+        height: 150px;
+    }
+    .allImage {
+        display: flex;
+        flex-direction: column;
+    }
+    .myImage {
+        width: 100px;
+        height: 100px;
+    }
+    .input {
+        width: 240px;
+        margin-left: 0;
+    }
+    .label {
+        padding: 0 0;
+    }
+    .rules {
+        width: 100%;
+    }
+}
+
