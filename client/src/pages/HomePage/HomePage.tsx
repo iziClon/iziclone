@@ -20,20 +20,24 @@ const HomePage: FC = () => {
 
   useEffect(() => {
     dispatch(getAllProducts());
-  }, [products]);
+  }, []);
 
   const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 6,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
+    largeDesktop: {
+      breakpoint: { max: 3000, min: 860 },
       items: 4,
     },
+    desktop: {
+      breakpoint: { max: 860, min: 720 },
+      items: 4,
+    },
+    tablet: {
+      breakpoint: { max: 720, min: 460 },
+      items: 5,
+    },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 2,
+      breakpoint: { max: 460, min: 0 },
+      items: 4,
     },
   };
 

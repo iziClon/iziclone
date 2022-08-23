@@ -9,13 +9,11 @@ const ProductCardComponent: FC<{ product: IProduct }> = ({ product }) => {
     id, title, images, description, year, price,
   } = product;
 
-  console.log(images, 'image');
-
   return (
 
     <div className={css.productCard}>
       <Link to={`productDetail/${id}`} state={product}>
-        {/* <div {images.map(image => <img src={image.imageRef} alt={title} />)}></div> */}
+        <img src={images[0].imageRef} alt={title} />
       </Link>
       <div className={css.info}>
         <div>

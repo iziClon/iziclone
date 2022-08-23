@@ -1,8 +1,8 @@
 const baseURL = 'http://localhost:5200';
 
 export const urls = {
-  common: '/common',
-  product: '/product',
+  commons: '/common',
+  products: '/product',
   auth: {
     signUp: '/auth/registration',
     login: '/auth/login',
@@ -10,6 +10,7 @@ export const urls = {
     refresh: '/auth/refresh',
   },
   users: '/users',
+  images: '/image',
 };
 
 export default baseURL;

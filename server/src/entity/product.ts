@@ -62,6 +62,6 @@ export class Product extends CommonFields implements IProduct {
     @JoinColumn({ name: 'userId' })
         user: User;
 
-    @OneToMany(() => Product, (product) => product.images)
+    @OneToMany(() => Image, (image) => image.product)
     images: Image[];
 }

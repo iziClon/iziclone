@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
-    width: 15%;
+    width: 190px;
     padding: 0 10px;
     border: 1px solid lightgrey;
     border-radius: 10px;
@@ -14,6 +14,8 @@
 .productCard img {
     width: 150px;
     height: 150px;
+    margin-top: 10px;
+    border-radius: 10px;
 }
 .info {
     display: flex;
@@ -37,3 +39,4 @@
     font-weight: bold;
     margin-bottom: 10px;
 }
+

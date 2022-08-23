@@ -40,6 +40,7 @@
     },
     "rules": {
       "linebreak-style": 0,
+      "no-param-reassign":  [2, { "props": false }],
         "import/extensions": [
             "error",
             "ignorePackages",
@@ -96,12 +97,6 @@
       "linebreak-style": [
         "error",
         "windows"
-      ],
-      "no-param-reassign": [
-        2,
-        {
-          "props": false
-        }
       ],
       "react/jsx-props-no-spreading": "off",
       "no-nested-ternary": "off"
