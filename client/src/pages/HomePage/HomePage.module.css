@@ -21,9 +21,10 @@
     max-inline-size: auto !important;
 }
 .products {
-    width: 430px;
+    width: auto;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 @media (max-width: 860px) {
     .homePage {

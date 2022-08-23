@@ -15,9 +15,7 @@ import { createProduct } from '../../store';
 import { useAppDispatch, useAppSelector } from '../../hook';
 import { storage } from '../../firebase';
 import {
-  IFullProduct,
   INewImage,
-  IProductSubmit,
   IThisMyImage,
 } from '../../interfaces';
 import css from './CreateProductPage.module.css';
@@ -56,12 +54,10 @@ const CreateProductPage: FC = () => {
         });
       });
       promises.push(imageRef);
-      console.log(imageRef, 'promises');
     });
   };
 
   const deleteImage = (thisMyImage: IThisMyImage) => {
-    console.log(thisMyImage, 'myImage');
     const result = myImages.filter((word) => word !== thisMyImage.myImage);
     setMyImages([...result]);
 
@@ -96,7 +92,8 @@ const CreateProductPage: FC = () => {
   categories.map((category) => category);
 
   const dispatch = useAppDispatch();
-  const submitProduct = async (fullProduct: IFullProduct) => {
+  const submitProduct = async (productSubmit : any) => {
+    let fullProduct = productSubmit;
     fullProduct = {
       product: {
         categoryId: +fullProduct.categoryId,
@@ -108,7 +105,7 @@ const CreateProductPage: FC = () => {
         status: false,
       },
       images: myImages,
-    } as IProductSubmit;
+    };
 
     dispatch(createProduct(fullProduct));
     reset();
@@ -125,7 +122,7 @@ const CreateProductPage: FC = () => {
 
         <div className={css.productForm}>
 
-          <form onSubmit={handleSubmit(submitProduct as any)}>
+          <form onSubmit={handleSubmit(submitProduct)}>
 
             <div className={css.imageBox}>
 
