@@ -71,12 +71,12 @@
     color: var(--black);
 }
 
-.listButton:focus { /*=mySalesPage  myPurchasesPage*/
+.link .listButton:focus { /*=mySalesPage  myPurchasesPage*/
     color: var(--main-blue-color);
     display: inline-block;
 }
 
-.listButton:focus::after { /*=mySalesPage  myPurchasesPage*/
+ .link .listButton:focus::after { /*=mySalesPage  myPurchasesPage*/
     content: "";
     border-bottom: 2px solid var(--main-blue-color);
     position: absolute;
@@ -109,161 +109,188 @@
 }
 
 .mainInfoWrapper {
-    min-height: 432px;
     height: 100%;
-    display: flex;
-    flex-direction: column;
     padding-top: 8px;
 }
 
 .mainInfo {
-    flex: 1;
+    height: 100%;
 }
 
-.mainInfoContent {
-    margin: -4px;
-    display: flex;
-    flex-wrap: wrap;
+.mainInfoBlock {
     min-width: 0;
-}
-
-.mainInfoContentBlock {
-    flex: none;
-    width: 33.33%;
-    padding: 4px;
-}
-
-.mainInfoContentBlockWrapper {
-    background-color: var(--white);
-    height: 100%;
-    border-radius: 8px;
-    padding: 16px 16px 24px 16px;
-}
-
-.blockContent {
     height: 100%;
     display: flex;
-    flex-wrap: nowrap;
     flex-direction: column;
-    min-width: 0;
+    flex-wrap: nowrap;
 }
 
-.dataBlock {
-    flex: 1;
-    width: auto;
-}
-
-.dataBlock > div {
-    margin-bottom: 12px;
-}
-
-.dataBlockInfo {
-    border-bottom: 1px solid var(--grey-lines);
-}
-
-.dataBlockInfoRating{
-    border-radius: 8px;
-    padding-bottom: 8px;
-}
-
-.ratingLine{
-    height: 4px;
-    background-color: var(--grey-lines);
-    position: relative;
-}
-
-.ratingLineFiller{
-    height: 4px;
-    border-radius: 8px;
-    position: absolute;
-}
-
-.dataBlockRating > span{
-    color: var(--light-grey);
-    font-size: 11px;
-}
-
-.ratingLabels{
-    display: flex;
-    flex-wrap: wrap;
-    min-width: 0;
-    justify-content: space-between;
-}
-
-.dataBlockInfoText {
-    margin-bottom: 32px;
-    margin-top: 8px;
-}
-
-.dataBlockInfoText > span {
-    color: var(--light-grey);
-    line-height: 1.25em;
-}
-
-.textBlock{
+.topBlock {
     min-width: 0;
     max-width: 100%;
 }
 
-.textBlockContent{
+.topBlockWrapper {
+    border-bottom: 1px solid var(--grey-lines);
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 8px;
+}
+
+.topBlockText {
+    background-color: var(--light-green);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+
+.topBlockText > p {
+    color: var(--text-green);
+    text-align: center;
+}
+
+.topBlockInfo{
+    min-width: 0;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: -4px;
+}
+
+.topBlockInfoWrapper{
+    padding: 4px;
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.topBlockInfoWrapper > span{
+    line-height: 1.25em;
+    font-weight: 700;
+}
+
+.topBlockDataWrapper{
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-content: flex-end;
-    flex-wrap: nowrap;
-    margin: -8px;
+    flex-wrap: wrap;
     min-width: 0;
 }
 
-.textBlockContentInfo{
-    padding: 8px;
-    flex: 1;
-    width: auto;
+.topBlockDataHeader{
+    min-width: 0;
+    max-width: 100%;
 }
 
-.textBlockContentInfo > h3{
-    margin-bottom: 8px;
-    line-height: 1.25em;
+.topBlockDataHeader > button{
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+}
+
+.ButtonWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 0;
+    align-items: center;
+    margin: -6px;
+}
+
+.ButtonWrapper > p{
+    padding: 6px;
+    min-width: 0;
+    max-width: 100%;
     font-weight: 700;
     font-size: 16px;
 }
 
-.textBlockContentInfo p{
-    line-height: 1.25em;
-    display: inline;
-}
-
-.textBlockContentButton{
-    padding: 8px;
-}
-
-.textBlockContentButton > button{
-    padding: 4px;
-    display: inline-block;
-    border: 1px solid transparent;
-    background: none;
-    color: inherit;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 500;
-    vertical-align: middle;
-    transition: background-color .15s,border-color .15s,color .15s;
-    appearance: none;
-    border-radius: 8px;
-    -webkit-tap-highlight-color: transparent;
-    cursor: pointer;
+.buttonIcon{
+    min-width: 0;
     max-width: 100%;
-    font-family: inherit;
-    font-size: 13px;
+    padding: 6px;
 }
 
-.textBlockContentButton span{
+.buttonIcon > span{
     color: var(--main-blue-color);
 }
 
-.textBlockContentButton svg{
+.buttonIcon svg{
     vertical-align: middle;
 }
+
+.topBlockDataInfo{
+    min-width: 0;
+    max-width: 100%;
+}
+
+.topBlockDataInfo > span{
+    font-size: 22px;
+}
+
+.mainBlock{
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.mainBlockWrapper{
+    border-bottom: 1px solid var(--grey-lines);
+    background-color: var(--white);
+    height: 100%;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.contentWrapper{
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentWrapper > div{
+    min-width: 0;
+    max-width: 100%;
+}
+
+.contentBox{
+    height: 100%;
+    padding: 16px 28px 16px 28px;
+    margin: 0 28px 0 28px;
+}
+
+.contentBox > img{
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    outline: none;
+    border: 0;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.contentBox h3{
+    margin-top: 28px;
+    margin-bottom: 16px;
+    line-height: 1.25em;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.contentBox p{
+    text-align: center;
+    line-height: 1.25em;
+}
+
 
 @media only screen and (min-width: 768px) {
     .myRatingPageItemHeader { /*=mySalesPageItemHeader  myPurchasesPageItemHeader*/
@@ -278,6 +305,14 @@
     .itemHeaderText { /*=mySalesPage  myPurchasesPage*/
         font-weight: 900;
         font-size: 22px;
+    }
+
+    .topBlockInfo{
+        margin: -6px;
+    }
+
+    .topBlockInfoWrapper{
+        padding: 6px;
     }
 
 }

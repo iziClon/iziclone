@@ -15,8 +15,8 @@ import { MyRatingAndReviewsPage } from '../pages/MyRatingAndReviewsPage/MyRating
 import { MyWalletBalancePage } from '../pages/MyWalletBalancePage/MyWalletBalancePage';
 import { MyFavouritesPage } from '../pages/MyFavouritesPage/MyFavouritesPage';
 import { MySettingsPage } from '../pages/MySettingsPage/MySettingsPage';
-import { MyWalletBonusesPage } from '../pages/MyWalletBonusesPage/MyWalletBalancePage';
-import { MyWalletCardsPage } from '../pages/MyWalletCardsPage/MyWalletBalancePage';
+import { MyWalletBonusesPage } from '../pages/MyWalletBonusesPage/MyWalletBonusesPahe';
+import { MyWalletCardsPage } from '../pages/MyWalletCardsPage/MyWalletCardsPage';
 
 
 const Router = () => (

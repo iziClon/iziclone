@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import css from './MyWalletBalancePage.module.css';
+import css from './MyWalletBonusesPage.module.css';
 
-const MyWalletBalancePage = () => (
-  <section className={css.myBalancePageWrapper}>
-    <div className={css.myBalancePageItem}>
-      <div className={css.myBalancePageItemHeader}>
+const MyWalletBonusesPage = () => (
+  <section className={css.myBonusesPageWrapper}>
+    <div className={css.myBonusesPageItem}>
+      <div className={css.myBonusesPageItemHeader}>
         <div className={css.itemHeaderTextContent}>
           <h1 className={css.itemHeaderText}>Гаманець</h1>
         </div>
-        <div className={css.purchasesListWrapper}>
-          <ul className={css.purchasesList}>
+        <div className={css.bonusesListWrapper}>
+          <ul className={css.bonusesList}>
             <li className={css.listItem}>
               <Link to="/my/wallet-balance" className={css.link}>
                 <button type="button" className={css.listButton}>
@@ -48,9 +48,6 @@ const MyWalletBalancePage = () => (
             <div className={css.mainInfoBlock}>
               <div className={css.topBlock}>
                 <div className={css.topBlockWrapper}>
-                  <div className={css.topBlockText}>
-                    <p>Чудово! У вас немає заборгованості за особовим рахунком</p>
-                  </div>
                   <div className={css.topBlockInfo}>
                     <div className={css.topBlockInfoWrapper}>
                       <span>
@@ -58,7 +55,7 @@ const MyWalletBalancePage = () => (
                           <div className={css.topBlockDataHeader}>
                             <button type="button">
                               <div className={css.ButtonWrapper}>
-                                <p>Особистий рахунок</p>
+                                <p>Доступно бонусів</p>
                                 <div className={css.buttonIcon}>
                                   <span>
                                     <svg
@@ -88,7 +85,7 @@ const MyWalletBalancePage = () => (
                             </button>
                           </div>
                           <div className={css.topBlockDataInfo}>
-                            <span>0 ₴</span>
+                            <span>0</span>
                           </div>
                         </div>
                       </span>
@@ -102,11 +99,16 @@ const MyWalletBalancePage = () => (
                     <div>
                       <div className={css.contentBox}>
                         <img
-                          src="https://izi.ua/cloud-cgi/static/izi-static/build/uk/images/money-flying-1X6fs.svg"
+                          src="https://izi.ua/cloud-cgi/static/izi-static/build/uk/images/bonuses-empty-1tV3M.svg"
                           alt="contentIcon"
                         />
-                        <h3>Немає операцій за особистим рахунком</h3>
-                        <p>Тут будуть відображатися всі дії по оплатах послуг ІЗІ</p>
+                        <h3>Поки що у вас немає бонусів</h3>
+                        <p>Тут будуть відображатися всі дії за отриманими бонусами</p>
+                        <div className={css.detailsButtonWrapper}>
+                          <div>
+                            <button type="button">Детальніше</button>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -121,4 +123,5 @@ const MyWalletBalancePage = () => (
 
   </section>
 );
-export { MyWalletBalancePage };
+
+export { MyWalletBonusesPage };
