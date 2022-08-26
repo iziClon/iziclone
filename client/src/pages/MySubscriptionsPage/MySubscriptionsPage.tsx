@@ -1,17 +1,18 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import React from 'react';
 
-import css from './MyFavouritesPage.module.css';
+import css from './MySubscriptionsPage.module.css';
 
-const MyFavouritesPage = () => (
-  <section className={css.myFavouritesPageWrapper}>
-    <div className={css.myFavouritesPageItem}>
-      <div className={css.myFavouritesPageItemHeader}>
+
+const MySubscriptionsPage = () => (
+  <section className={css.mySubscriptionsPageWrapper}>
+    <div className={css.mySubscriptionsPageItem}>
+      <div className={css.mySubscriptionsPageItemHeader}>
         <div className={css.itemHeaderTextContent}>
           <h1 className={css.itemHeaderText}>Обране</h1>
         </div>
-        <div className={css.favoritesListWrapper}>
-          <ul className={css.favoritesList}>
+        <div className={css.subscriptionsListWrapper}>
+          <ul className={css.subscriptionsList}>
             <li className={css.listItem}>
               <Link to="/my/favourites" className={css.link}>
                 <button type="button" className={css.listButton}>
@@ -43,15 +44,15 @@ const MyFavouritesPage = () => (
                     <div>
                       <div className={css.contentBox}>
                         <img
-                          src="https://izi.ua/cloud-cgi/static/izi-static/images/drawings/heart-in-hand.svg"
+                          src="https://izi.ua/cloud-cgi/static/izi-static/build/uk/images/hand-heart-arGqT.svg"
                           alt="contentIcon"
                         />
                         <h3>
-                          У вас немає вибраних оголошень
+                          У вас поки немає підписок на запити
                         </h3>
                         <p>
-                          Знайдіть оголошення яке вам подобається <br />
-                          та додайте до вибраного.
+                          Введіть у пошук те, що ви шукаєте, та підпишіться. <br />
+                          На пошту та у вибране будуть надходити нові пропозиції
                         </p>
                       </div>
                     </div>
@@ -68,4 +69,4 @@ const MyFavouritesPage = () => (
   </section>
 );
 
-export { MyFavouritesPage };
+export { MySubscriptionsPage };

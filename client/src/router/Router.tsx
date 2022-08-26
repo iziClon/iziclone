@@ -17,6 +17,8 @@ import { MyFavouritesPage } from '../pages/MyFavouritesPage/MyFavouritesPage';
 import { MySettingsPage } from '../pages/MySettingsPage/MySettingsPage';
 import { MyWalletBonusesPage } from '../pages/MyWalletBonusesPage/MyWalletBonusesPahe';
 import { MyWalletCardsPage } from '../pages/MyWalletCardsPage/MyWalletCardsPage';
+import { MySubscriptionsPage } from '../pages/MySubscriptionsPage/MySubscriptionsPage';
+import { MyContactInfoPage } from '../pages/MyContactInfoPage/MyContactInfoPage';
 
 
 const Router = () => (
@@ -36,14 +38,18 @@ const Router = () => (
         <Route path="wallet-bonuses" element={<MyWalletBonusesPage />} />
         <Route path="wallet-cards" element={<MyWalletCardsPage />} />
         <Route path="favourites" element={<MyFavouritesPage />} />
+        <Route path="subscriptions" element={<MySubscriptionsPage />} />
         <Route path="settings" element={<MySettingsPage />} />
+        <Route path="settings/contact-info" element={<MyContactInfoPage />} />
       </Route>
     </Route>
-
     <Route path="/category" element={<Layout />}>
       <Route path=":categoryId" element={<CategoryPage />} />
     </Route>
   </Routes>
 );
 
-export { Router };
+export
+{
+  Router,
+};

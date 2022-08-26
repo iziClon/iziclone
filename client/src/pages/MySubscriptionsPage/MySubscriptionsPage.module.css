@@ -1,10 +1,10 @@
-.myFavouritesPageWrapper { /*=myProductsPageWrapper  mySalesPageWrapper  myPurchasesPageWrapper myRatingPageWrapper myBalancePageWrapper myBonusesPageWrapper myCardsPageWrapper*/
+.mySubscriptionsPageWrapper { /*=myProductsPageWrapper  mySalesPageWrapper  myPurchasesPageWrapper myRatingPageWrapper myBalancePageWrapper myBonusesPageWrapper myCardsPageWrapper myFavouritesPageWrapper*/
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-.myFavouritesPageItem { /*=mySalesPageItem  myPurchasesPageItem myRatingPageItem myBalancePageItem myBonusesPageItem myCardsPageItem*/
+.mySubscriptionsPageItem { /*=mySalesPageItem  myPurchasesPageItem myRatingPageItem myBalancePageItem myBonusesPageItem myCardsPageItem myFavouritesPageItem*/
     margin-top: 18px;
     flex: 1;
     height: 100%;
@@ -14,7 +14,7 @@
     min-width: 0;
 }
 
-.myFavouritesPageItemHeader { /*mySalesPageItemHeader  myPurchasesPageItemHeader myRatingPageItemHeader myWalletBalancePage myBonusesPageItemHeader myCardsPageItemHeader*/
+.mySubscriptionsPageItemHeader { /*mySalesPageItemHeader  myPurchasesPageItemHeader myRatingPageItemHeader myWalletBalancePage myBonusesPageItemHeader myCardsPageItemHeader myFavouritesPageItemHeader*/
     min-width: 0;
     max-width: 100%;
     border-bottom: 1px solid var(--grey-lines);
@@ -31,11 +31,11 @@
     font-size: 16px;
 }
 
-.favoritesListWrapper { /*=salesListWrapper  purchasesListWrapper ratingListWrapper myWalletBalancePage bonusesListWrapper myFavouritesPage*/
+.subscriptionsListWrapper { /*=salesListWrapper  purchasesListWrapper ratingListWrapper myWalletBalancePage bonusesListWrapper myFavouritesPage*/
     overflow-x: auto;
 }
 
-.favoritesList { /*=salesList  purchasesList ratingList bonusesList cardsList*/
+.subscriptionsList { /*=salesList  purchasesList ratingList bonusesList cardsList*/
     display: flex;
     overflow-x: auto;
     white-space: nowrap;
@@ -136,6 +136,8 @@
     height: 100%;
     border-radius: 8px;
     padding: 16px;
+    border-bottom: 1px solid var(--grey-lines);
+    background-color: var(--white);
 }
 
 .contentWrapper{
@@ -183,7 +185,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-    .myFavouritesPageItemHeader {
+    .mySubscriptionsPageItemHeader {
         border-top-right-radius: 8px;
         border-top-left-radius: 8px;
     }
