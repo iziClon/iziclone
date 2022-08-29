@@ -1,39 +1,74 @@
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable no-param-reassign */
-import React, { FC, useEffect, useState } from 'react';
+import React, {
+  ChangeEvent, FC, useEffect, useState,
+} from 'react';
 import { useForm } from 'react-hook-form';
 import {
   ref,
   uploadBytes,
   listAll,
   getDownloadURL,
+  deleteObject,
 } from 'firebase/storage';
 import { v4 } from 'uuid';
 
 import { createProduct } from '../../store';
 import { useAppDispatch, useAppSelector } from '../../hook';
 import { storage } from '../../firebase';
+import {
+  INewImage,
+  IThisMyImage,
+} from '../../interfaces';
 import css from './CreateProductPage.module.css';
 
 const CreateProductPage: FC = () => {
-  const [image, setImage] = useState<File | null>(null);
+  const [images, setImages] = useState([] as File[]);
+
+  const [myImages, setMyImages] = useState([] as string[]);
 
   const [imageList, setImageList] = useState([] as string[]);
-
-  const [myImage, setMyImage] = useState('');
+  console.log(imageList[100]);
 
   const imageListRef = ref(storage, 'images/');
 
+  const handleChange = (e: ChangeEvent) => {
+    const target = e.target as HTMLInputElement;
+    const files = target.files as FileList | null;
+    if (files) {
+      for (let i = 0; i < files.length; i += 1) {
+        const newImage = files[i] as INewImage;
+        newImage.id = Math.random();
+        setImages((prevState) => [...prevState, newImage]);
+      }
+    }
+  };
+
   const addImage = () => {
-    if (image == null) return;
-    if (imageList == null) return;
-    const imageRef = ref(storage, `images/${image + v4()}`);
-    uploadBytes(imageRef, image).then((snapshot) => {
-      getDownloadURL(snapshot.ref).then((url) => {
-        setImageList((prev) => [...prev, url]);
-        setMyImage(() => url);
+    const promises = [];
+    const changeImages = [] as string[];
+    images.forEach((image) => {
+      const imageRef = ref(storage, `images/${image + v4()}`);
+      uploadBytes(imageRef, image).then((snapshot) => {
+        getDownloadURL(snapshot.ref).then((url) => {
+          changeImages.push(url);
+          setMyImages([...changeImages]);
+        });
       });
+      promises.push(imageRef);
     });
+  };
+
+  const deleteImage = (thisMyImage: IThisMyImage) => {
+    const result = myImages.filter((word) => word !== thisMyImage.myImage);
+    setMyImages([...result]);
+
+    const pictureRef = ref(storage, thisMyImage.myImage);
+    deleteObject(pictureRef)
+      .then(() => {
+        alert('Picture is deleted successfully!');
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   useEffect(() => {
@@ -57,20 +92,22 @@ const CreateProductPage: FC = () => {
   categories.map((category) => category);
 
   const dispatch = useAppDispatch();
-
-  const submit = (product: any) => {
-    product = {
-      categoryId: +product.categoryId,
-      userId: user?.id,
-      price: +product.price,
-      year: +product.year,
-      title: product.title,
-      description: product.description,
-      status: false,
-      image: myImage,
+  const submitProduct = async (productSubmit : any) => {
+    let fullProduct = productSubmit;
+    fullProduct = {
+      product: {
+        categoryId: +fullProduct.categoryId,
+        userId: user?.id as number,
+        price: +fullProduct.price,
+        year: +fullProduct.year,
+        title: fullProduct.title,
+        description: fullProduct.description,
+        status: false,
+      },
+      images: myImages,
     };
 
-    dispatch(createProduct(product));
+    dispatch(createProduct(fullProduct));
     reset();
   };
 
@@ -85,14 +122,20 @@ const CreateProductPage: FC = () => {
 
         <div className={css.productForm}>
 
-          <form onSubmit={handleSubmit(submit)}>
+          <form onSubmit={handleSubmit(submitProduct)}>
 
             <div className={css.imageBox}>
 
               <div className={css.labelImage}>ФотографіЇ * :</div>
-
-              <div>
-                <img className={css.myImage} src={myImage} alt="" />
+              <div className={css.allImage}>
+                {myImages.map((myImage) => (
+                  <div className={css.oneImage} key={myImage}>
+                    <img className={css.myImage} src={myImage} alt="" />
+                    <button className={css.buttonImage} type="button" onClick={() => deleteImage({ myImage })}>
+                      Видалити фото
+                    </button>
+                  </div>
+                ))}
               </div>
 
               <div className={css.divInputImage}>
@@ -102,10 +145,8 @@ const CreateProductPage: FC = () => {
                   id="image"
                   type="file"
                   {...register('image')}
-                  onChange={(event) => {
-                    const newFile = event.target.files as FileList;
-                    setImage(newFile[0]);
-                  }}
+                  multiple
+                  onChange={handleChange}
                 />
 
                 <button className={css.addImage} onClick={addImage} type="button">Додати фото</button>
@@ -150,7 +191,7 @@ const CreateProductPage: FC = () => {
           <div>
             <h1 className={css.headerDescription}>Як сфотографувати товар?</h1>
             <p>
-              Зробіть одну фотографію на телефон з різних ракурсів у звичайній обстановці.
+              Зробіть не менше 3-ох фотографій на телефон з різних ракурсів у звичайній обстановці.
               Для покупців важливіше не краса фото, а реальний стан речей.
             </p>
           </div>

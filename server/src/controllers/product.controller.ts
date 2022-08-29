@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 
-import { IProduct } from '../interfaces';
-import { productService } from '../services';
+import {IImage, IProduct} from '../interfaces';
+import {imageService, productService} from '../services';
 
 class ProductController {
     public async getProducts(req: Request, res: Response): Promise<Response<IProduct[]>> {
@@ -9,20 +9,29 @@ class ProductController {
         return res.json(products);
     }
 
-    // public async getProductsByCategory(req: Request, res: Response): Promise<Response<IProduct[]>> {
-    //     const { categoryId } = req.params;
-    //     const getAllProductsByCategory = await productService.getProductsByCategory(+categoryId);
-    //     return res.json(getAllProductsByCategory);
-    // }
-
     public async getProductById(req:Request,res:Response):Promise<Response<IProduct>>{
         const {id} = req.params;
         const product = await productService.getProductById(+id);
         return res.json(product);
     }
 
+    // public async getProductByTitle(req:Request,res:Response):Promise<Response<IProduct>>{
+    //     const {title} = req.params;
+    //     const product = await productService.getProductByTitle(title);
+    //     return res.json(product);
+    // }
+
     public async createProduct(req: Request, res: Response): Promise<Response<IProduct>> {
-        const createdProduct = await productService.createProduct(req.body);
+        const createdProduct = await productService.createProduct(req.body.product);
+        if(req.body.product) {
+            req.body.images.map( async (image: string) => {
+                const newImage = {
+                    productId : req.body.product.id,
+                    imageRef : image
+                } as IImage;
+               await imageService.createImage(newImage);
+            })
+        }
         return res.json(createdProduct);
     }
 

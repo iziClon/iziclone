@@ -1,11 +1,12 @@
 import {
-    Column, Entity, JoinColumn, ManyToOne,
+    Column, Entity, JoinColumn, ManyToOne, OneToMany,
 } from 'typeorm';
 
 import { CommonFields } from './commonFields';
 import { Category } from './category';
 import { User } from './user';
 import { IProduct } from '../interfaces';
+import { Image } from './image';
 
 @Entity('Products', { database: 'uwETQSYns8' })
 export class Product extends CommonFields implements IProduct {
@@ -53,13 +54,6 @@ export class Product extends CommonFields implements IProduct {
     })
         status: boolean;
 
-    @Column({
-        type: 'varchar',
-        width: 255,
-        nullable: false,
-    })
-        image: string;
-
     @ManyToOne(() => Category, (category) => category.products)
     @JoinColumn({ name: 'categoryId' })
         category: Category;
@@ -67,4 +61,7 @@ export class Product extends CommonFields implements IProduct {
     @ManyToOne(() => User, (user) => user.products)
     @JoinColumn({ name: 'userId' })
         user: User;
+
+    @OneToMany(() => Image, (image) => image.product)
+    images: Image[];
 }

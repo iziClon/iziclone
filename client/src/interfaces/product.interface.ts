@@ -1,3 +1,5 @@
+import { IImage } from './image.interface';
+
 export interface IProduct {
     id: number;
     categoryId: number;
@@ -7,5 +9,5 @@ export interface IProduct {
     price: number;
     year?: number;
     status: boolean;
-    image: string;
+    images: IImage [];
 }

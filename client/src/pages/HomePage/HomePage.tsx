@@ -20,38 +20,40 @@ const HomePage: FC = () => {
 
   useEffect(() => {
     dispatch(getAllProducts());
-  }, [products]);
+  }, []);
 
   const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 6,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
+    largeDesktop: {
+      breakpoint: { max: 3000, min: 860 },
       items: 4,
     },
+    desktop: {
+      breakpoint: { max: 860, min: 720 },
+      items: 4,
+    },
+    tablet: {
+      breakpoint: { max: 720, min: 460 },
+      items: 5,
+    },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 2,
+      breakpoint: { max: 460, min: 0 },
+      items: 4,
     },
   };
 
   return (
     <div className={css.homePage}>
-      <div>
-        <div>
-          <Carousel className={css.carousel} responsive={responsive}>
-            {categories.map(
-              (category) => <CarouselComponent key={category.id} category={category} />,
-            )}
-          </Carousel>
-        </div>
+      <div className={css.home}>
+        <Carousel className={css.carousel} responsive={responsive}>
+          {categories && categories.map(
+            (category) => <CarouselComponent key={category.id} category={category} />,
+          )}
+        </Carousel>
+      </div>
 
-        <div className={css.products}>{products.map(
-          (product) => <ProductCardComponent key={product.id} product={product} />,
-        )}
-        </div>
+      <div className={css.products}>{products.map(
+        (product) => <ProductCardComponent key={product.id} product={product} />,
+      )}
       </div>
     </div>
   );

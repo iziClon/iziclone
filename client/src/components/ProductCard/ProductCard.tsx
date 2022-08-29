@@ -6,14 +6,14 @@ import { IProduct } from '../../interfaces';
 
 const ProductCardComponent: FC<{ product: IProduct }> = ({ product }) => {
   const {
-    id, title, image, description, year, price,
+    id, title, images, description, year, price,
   } = product;
 
   return (
 
     <div className={css.productCard}>
       <Link to={`productDetail/${id}`} state={product}>
-        <img src={image} alt={title} />
+        <img src={images[0].imageRef} alt={title} />
       </Link>
       <div className={css.info}>
         <div>

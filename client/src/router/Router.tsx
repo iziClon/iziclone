@@ -2,10 +2,8 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { Layout, ProfileLayout } from '../components';
-
-
 import {
-  HomePage, CategoryPage, AuthPage, CreateProductPage,
+  HomePage, CategoryPage, AuthPage, CreateProductPage
 } from '../pages';
 import { ProductDetails } from '../pages/ProductDetails/ProductDetails';
 import { MyProductsPage } from '../pages/MyProductsPage/MyProductsPage';
