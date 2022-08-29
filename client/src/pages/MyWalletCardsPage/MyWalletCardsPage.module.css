@@ -1,0 +1,260 @@
+.myCardsPageWrapper { /*=myProductsPageWrapper  mySalesPageWrapper  myPurchasesPageWrapper myRatingPageWrapper myBalancePageWrapper myBonusesPageWrapper*/
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.myCardsPageItem { /*=mySalesPageItem  myPurchasesPageItem myRatingPageItem myBalancePageItem myBonusesPageItem*/
+    margin-top: 18px;
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    min-width: 0;
+}
+
+.myCardsPageItemHeader { /*mySalesPageItemHeader  myPurchasesPageItemHeader myRatingPageItemHeader myWalletBalancePage myBonusesPageItemHeader*/
+    min-width: 0;
+    max-width: 100%;
+    border-bottom: 1px solid var(--grey-lines);
+    background-color: var(--white);
+}
+
+.itemHeaderTextContent { /*=mySalesPage  myPurchasesPage myRatingPage myWalletBalancePage*/
+    margin: 16px 16px 12px 16px;
+}
+
+.itemHeaderText { /*=mySalesPageItemHeader  myPurchasesPage myRatingPage myWalletBalancePage*/
+    line-height: 1.25em;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.cardsListWrapper { /*=salesListWrapper  purchasesListWrapper ratingListWrapper myWalletBalancePage bonusesListWrapper*/
+    overflow-x: auto;
+}
+
+.cardsList { /*=salesList  purchasesList ratingList bonusesList*/
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.listItem { /*=mySalesPage  myPurchasesPage myRatingPage myWalletBalancePage myWalletBonusesPage*/
+    display: inline-block;
+    position: relative;
+    min-width: 120px;
+}
+
+.listButton { /*=  myPurchasesPage myWalletBalancePage myWalletBonusesPage*/
+    padding: 12px 20px;
+    max-width: 100%;
+    height: 40px;
+    display: block;
+    border: 1px solid transparent;
+    background: none;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 500;
+    line-height: 1.25;
+    transition: background-color .15s, border-color .15s, color .15s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 8px;
+    pointer-events: auto;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--black);
+}
+
+.link .listButton:focus { /*=mySalesPage  myPurchasesPage myWalletBalancePage myWalletBonusesPage*/
+    color: var(--main-blue-color);
+    display: inline-block;
+}
+
+.link .listButton:focus::after { /*=mySalesPage  myPurchasesPage myWalletBalancePage myWalletBonusesPage*/
+    content: "";
+    border-bottom: 2px solid var(--main-blue-color);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+}
+
+.buttonContent { /*=mySalesPage  myPurchasesPage myWalletBalancePage myWalletBonusesPage*/
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin: -2px;
+}
+
+.buttonText { /*=mySalesPage   myPurchasesPage myWalletBalancePage myWalletBonusesPage*/
+    padding: 2px;
+    min-width: 0;
+    max-width: 100%;
+    white-space: nowrap;
+    line-height: 1.25em;
+}
+
+.mainContent {
+    flex: 1;
+    width: auto;
+}
+
+.mainInfoWrapper {
+    height: 100%;
+    padding-top: 8px;
+}
+
+.mainInfo {
+    height: 100%;
+}
+
+.mainInfoBlock {
+    min-width: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.mainBlock{
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.mainBlockWrapper{
+    border-bottom: 1px solid var(--grey-lines);
+    background-color: var(--white);
+    height: 100%;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.contentWrapper{
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentWrapper > div{
+    min-width: 0;
+    max-width: 100%;
+}
+
+.contentBox{
+    height: 100%;
+    padding: 16px 28px 16px 28px;
+    margin: 0 28px 0 28px;
+}
+
+.contentBox > img{
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    outline: none;
+    border: 0;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.contentBox h3{
+    margin: 28px auto 16px auto;
+    line-height: 1.25em;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.contentBox p{
+    text-align: center;
+    line-height: 1.25em;
+}
+
+.contentBox button{
+    margin: 20px auto;
+    padding: 8px;
+    border-radius: 13px;
+    font-weight: 400;
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: var(--main-blue-color);
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    transition: background-color .15s,border-color .15s,color .15s;
+    appearance: none;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    max-width: 100%;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.contentBox button:hover{
+    background-color: var(--grey-lines);
+}
+
+.buttonWrapper{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin: -4px;
+    min-width: 0;
+}
+
+.buttonIcon{
+    min-width: 0;
+    max-width: 100%;
+    padding: 4px;
+}
+
+.buttonIcon svg{
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+}
+
+.buttonText{
+    min-width: 0;
+    max-width: 100%;
+    padding: 4px;
+    font-weight: 500;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .myRatingPageItemHeader {
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+    }
+
+    .itemHeaderTextContent {
+        margin: 20px 16px 20px 16px;
+    }
+
+    .itemHeaderText {
+        font-weight: 900;
+        font-size: 22px;
+    }
+
+}
+
+
+
+

@@ -33,7 +33,7 @@
     font-size: 12px;
 }
 
-.login a {
+.login a, .login a:visited {
     color: var(--white);
 }
 

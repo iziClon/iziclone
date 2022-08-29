@@ -1,0 +1,124 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+    padding: 0 24px 0 24px;
+    background-color: var(--bg-my);
+}
+
+.profileLayoutAside{
+    width: 20%;
+    min-width: 0;
+    max-width: 100%;
+    padding: 24px 0 24px 0;
+}
+
+.cabinetSidebar{
+    padding: 0 8px 0 8px;
+    border-radius: 8px;
+    border-bottom: 1px solid var(--grey-lines);
+    background-color: var(--white);
+}
+
+.cabinetSidebarContent{
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin: -8px;
+}
+
+.sidebarHeader{
+    padding: 8px;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.headerContent{
+    padding: 0 32px 0 32px;
+}
+
+.userAvatar{
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 16px auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.userAvatar img{
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    outline: none;
+    border: 0;
+}
+
+.headerContent span{
+    display: block;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.userAdvertisementWrapper{
+    margin-top: 12px;
+}
+.userAdvertisement{
+    text-align: center;
+    line-height: 1em;
+    border-bottom: 2px solid var(--grey-lines);
+    margin-bottom: 8px;
+}
+
+.userAdvertisementInfo{
+    min-width: 0;
+    max-width: 100%;
+    font-size: 11px;
+}
+.userToolBar {
+    width: 100%;
+    padding: 8px;
+}
+.userToolBar a[class='active'] > div{
+    background-color: #dfe1f0;
+    border-radius: 8px;
+    color: var(--main-blue-color);
+}
+a:visited{
+    color: inherit;
+}
+
+.userToolBar div {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    padding: 11px 15px;
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+.userToolBar div:hover  {
+    background-color: #dfe1f0;
+    border-radius: 8px;
+    color: var(--main-blue-color);
+}
+
+.profileMain{
+    display: flex;
+    flex-direction: column;
+    margin-right: -24px;
+    padding: 0 24px 24px;
+    background: #f4f4f5;
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 960px) {
+.profileLayoutAside{
+display: none
+}
+}
+
+
